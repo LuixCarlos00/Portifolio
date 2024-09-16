@@ -1,0 +1,57 @@
+.body-style {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  background-color: #3a4452;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-container {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.title {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.content-container {
+  margin-top: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  background-color: aliceblue;
+}
+
+.experience-block {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta o número de colunas conforme o tamanho da tela */
+  gap: 20px;
+  width: 100%;
+}
+
+.example-card {
+  margin : 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  height: auto;
+}
+
+.card-content {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 200px; /* Ajuste conforme necessário */
+}
+
+.card-content p {
+  margin: 0;
+  padding: 10px;
+}
