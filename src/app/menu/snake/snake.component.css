@@ -1,0 +1,49 @@
+body{
+
+
+  height: 450px;
+  background-color: white
+}
+
+
+.game-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border: 2px solid #000;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.snake {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+}
+
+.food {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
+
+
+.play{
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-top: 20px;
+}

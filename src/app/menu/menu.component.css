@@ -29,9 +29,8 @@ html {
   justify-content: center;
   align-items: center;
   height: 100%;
-  display: grid;
-  grid-template-columns: 90% 10%;
-  width: 100%;
+  display: flex;
+   width: 100%;
 }
 
 .carousel {
@@ -45,11 +44,24 @@ html {
    animation: scroll 20s linear infinite;
 }
 
+.play{
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+}
+
+
 .carousel img {
-  width: 150px; /* Ajuste o tamanho das imagens conforme necessário */
-  height: auto; /* Mantém a proporção das imagens */
+  width: 150px;
+  height: auto;
   margin-right: 10px;
-  object-fit: contain; /* Garante que a imagem se ajuste dentro do contêiner */
+  object-fit: contain;
 }
 
 @keyframes scroll {

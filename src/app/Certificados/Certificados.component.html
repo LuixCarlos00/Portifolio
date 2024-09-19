@@ -1,0 +1,19 @@
+
+
+<body>
+  <div class="title">
+    <p>Certificados</p>
+  </div>
+
+  <div class="rotated-box">
+  </div>
+  <div class="inner-content">
+    <div class="card-container">
+      <div class="card" *ngFor="let card of cards" (click)="openCertificate(card)">
+        <img [src]="card.templateImage" alt="Template Image">
+      </div>
+    </div>
+  </div>
+</body>
+<app-Sobre></app-Sobre>
+

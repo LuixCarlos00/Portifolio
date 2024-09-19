@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CertificadosComponent } from './Certificados/Certificados.component';
+import { CertificadosComponent } from '../Certificados/Certificados.component';
+import { SnakeComponent } from './snake/snake.component';
 
 @Component({
   selector: 'app-menu',
@@ -10,6 +11,7 @@ import { CertificadosComponent } from './Certificados/Certificados.component';
 export class MenuComponent implements OnInit {
 
 
+
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -17,7 +19,7 @@ export class MenuComponent implements OnInit {
 
   download() {
     const link = document.createElement('a');
-    link.href = '../../assets/imagens/Luiz Carlos (1).pdf';
+    link.href = '../../assets/imagens/Luiz Carlos .pdf';
     link.download = 'luiz-carlos-cv.pdf';
     link.click();
   }
@@ -29,5 +31,14 @@ export class MenuComponent implements OnInit {
     });
   }
 
+
+
+  iniciarJogo() {
+     const dialogRef = this.dialog.open(SnakeComponent,{
+      width: '405px',
+      height: '470px',
+
+     })
+    }
 
 }

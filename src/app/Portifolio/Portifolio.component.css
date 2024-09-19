@@ -1,6 +1,6 @@
 .body-style {
   width: 100%;
-  height: auto;
+  min-height: 150vh;
   margin: 0;
   background-color: #3a4452;
   display: flex;
@@ -25,33 +25,58 @@
   justify-content: center;
   align-items: center;
   width: 90%;
-  background-color: aliceblue;
 }
 
 .experience-block {
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta o número de colunas conforme o tamanho da tela */
+  display: flex;
   gap: 20px;
+  justify-content: center;
   width: 100%;
 }
 
 .example-card {
-  margin : 40px;
+  cursor: pointer;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 300px;
   height: auto;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.example-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
 
 .card-content {
   flex: 1;
   overflow-y: auto;
-  max-height: 200px; /* Ajuste conforme necessário */
+  max-height: 250px;
 }
 
 .card-content p {
   margin: 0;
   padding: 10px;
+}
+
+button[mat-button] {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+button[mat-button]:hover {
+  background-color: #ddd;
 }

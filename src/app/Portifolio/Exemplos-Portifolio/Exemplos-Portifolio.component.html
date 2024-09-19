@@ -1,0 +1,18 @@
+<body>
+
+
+  <br>
+
+  <div class="dialog-container">
+    <div class="text-section">
+      <h2>{{ selectedItem.title }}</h2>
+      <p>{{ selectedItem.description }}</p>
+    </div>
+
+    <div class="image-section">
+      <div class="image-grid">
+        <img *ngFor="let image of selectedItem.imageUrl" [src]="image.url" (click)="openImage(image.url)" alt="Image">
+      </div>
+    </div>
+  </div>
+</body>

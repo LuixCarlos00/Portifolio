@@ -1,0 +1,11 @@
+
+
+<body>
+  <div class="game-container" #gameBoard>
+    <div class="snake" *ngFor="let segment of snake" [ngStyle]="{'top': segment.y + 'px', 'left': segment.x + 'px'}"></div>
+    <div class="food" [ngStyle]="{'top': food.y + 'px', 'left': food.x + 'px'}"></div>
+  </div>
+  <div class="play">
+    <button (click)="startGame()">Iniciar Jogo</button>
+  </div>
+</body>
