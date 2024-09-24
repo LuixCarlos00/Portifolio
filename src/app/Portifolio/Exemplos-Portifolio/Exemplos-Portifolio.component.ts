@@ -9,21 +9,19 @@ import { ExemplosPortifolio } from '../../Opcoes/ExemplosPorti';
   styleUrls: ['./Exemplos-Portifolio.component.css']
 })
 export class ExemplosPortifolioComponent implements OnInit {
-   portfolioItems = ExemplosPortifolio;
+  portfolioItems = ExemplosPortifolio;
   selectedItem: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: { codigo: number } ,
-  private dialog: MatDialog) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: { codigo: number },
+              private dialog: MatDialog) { }
 
   ngOnInit() {
     this.selectedItem = this.portfolioItems.find(item => item.codigo === this.data.codigo);
   }
 
-
-  openImage(imageUrl: string) {
+  openMedia(mediaUrl: string, isVideo: boolean) {
     this.dialog.open(ImageModalComponent, {
-      data: { imageUrl: imageUrl },
-      width: '80%',
-     });
+      data: { mediaUrl: mediaUrl, isVideo: isVideo }
+    });
   }
 }

@@ -10,6 +10,9 @@ import { PortfolioItem, Portifolio } from '../Opcoes/Portifolio';
 })
 
 export class PortifolioComponent implements OnInit {
+
+
+
   portfolioItems: PortfolioItem[] = Portifolio;
   visibleItems: PortfolioItem[] = [];
   currentPage = 0;

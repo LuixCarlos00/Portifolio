@@ -20,8 +20,8 @@ export class CertificadosComponent implements OnInit {
   openCertificate(card: any): void {
     this.dialog.open(CertificadoModalComponent, {
       data: { certificateImage: card.Certificado },
-      width: '80%',
-      height: '80%',
+      panelClass: 'custom-modal-container', // Classe CSS personalizada para o modal
+
     });
   }
 }

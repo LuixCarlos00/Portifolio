@@ -6,6 +6,8 @@ interface ExemplosPortifolio {
   imageUrl: {
     url: string
   }[];
+  videoUrl:{
+    url: string}[];
  }
 
 export const ExemplosPortifolio: ExemplosPortifolio[] = [
@@ -16,11 +18,22 @@ export const ExemplosPortifolio: ExemplosPortifolio[] = [
       real dos veículos, controle de manutenção, e geração de relatórios detalhados sobre a utilização
       dos automóveis. A interface foi construída utilizando Java Swing e o MySQL.`,
     imageUrl: [
-      { url: 'https://material.angular.io/assets/img/examples/shiba2.jpg' },
-      { url: 'https://material.angular.io/assets/img/examples/shiba2.jpg' },
-      { url: 'https://material.angular.io/assets/img/examples/shiba2.jpg' },
-      { url: 'https://material.angular.io/assets/img/examples/shiba2.jpg' }
-    ]
+      { url: '../../assets/imagens/softwareGestaoVeiculos/login.png' },
+      { url: '../../assets/imagens/softwareGestaoVeiculos/criarLogin.png' },
+      { url: '../../assets/imagens/softwareGestaoVeiculos/home.png' },
+      { url: '../../assets/imagens/softwareGestaoVeiculos/cadastro.png' },
+      { url: '../../assets/imagens/softwareGestaoVeiculos/cadstroFuncionario.png' },
+      { url: '../../assets/imagens/softwareGestaoVeiculos/cadastroVeiculo.png' },
+      { url: '../../assets/imagens/softwareGestaoVeiculos/cadastroEmpresa.png' },
+      { url: '../../assets/imagens/softwareGestaoVeiculos/movimentacao.png' },
+      { url: '../../assets/imagens/softwareGestaoVeiculos/movimentacaoDeVeiculos.png' },
+      { url: '../../assets/imagens/softwareGestaoVeiculos/controleDeGasto.png' },
+      { url: '../../assets/imagens/softwareGestaoVeiculos/requisisaoDeCompra.png' },
+      { url: '../../assets/imagens/softwareGestaoVeiculos/outros.png' },
+      { url: '../../assets/imagens/softwareGestaoVeiculos/sobre.png' },
+
+    ],
+    videoUrl: []
   },
 
   {
@@ -31,12 +44,16 @@ export const ExemplosPortifolio: ExemplosPortifolio[] = [
       foi projetada para facilitar o processo de tomada de decisões, oferecendo relatórios analíticos e
       dashboards personalizados.`,
     imageUrl: [
-      { url: 'https://material.angular.io/assets/img/examples/shiba2.jpg' },
-      { url: 'https://material.angular.io/assets/img/examples/shiba2.jpg' },
-      { url: 'https://material.angular.io/assets/img/examples/shiba2.jpg' },
-      { url: 'https://material.angular.io/assets/img/examples/shiba2.jpg' },
-      { url: 'https://material.angular.io/assets/img/examples/shiba2.jpg' },
-      { url: 'https://material.angular.io/assets/img/examples/shiba2.jpg' }
+      { url: '../../assets/imagens/SoftwareDeClinica/login.png'},
+      { url: '../../assets/imagens/SoftwareDeClinica/home.png'},
+      { url: '../../assets/imagens/SoftwareDeClinica/barraLatera.png'},
+
+    ],
+    videoUrl: [
+      { url: '../../assets/imagens/SoftwareDeClinica/SaudeConecta.Gerenciamento.mp4'},
+      { url: '../../assets/imagens/SoftwareDeClinica/SaudeConecta.HistoricoDeProntuario.mp4'},
+      { url: '../../assets/imagens/SoftwareDeClinica/SaudeConect.TrocaSenha.mp4'},
+      { url: '../../assets/imagens/SoftwareDeClinica/responsividade.mp4'}
     ]
   }
 

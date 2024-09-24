@@ -1,54 +1,71 @@
-body {
-  margin: 0;
-  background-color: #545d69;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.title-container {
-  margin-top: 20px;
-}
+   body {
+    margin: 0;
+    background-color: #545d69;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.title {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-}
+  .title-container {
+    margin-top: 20px;
+  }
 
-.dialog-container {
-  display: flex;
-  flex-direction: row; /* Mudando para row para alinhar lado a lado */
-  height: 80%;
-  width: 100%;
-}
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
 
-.text-section {
-  width: 80%;
-   flex: 1;
-  margin-right: 20px;
-  margin-left: 20px;
-  text-justify: justify;
-  color: white;
-  overflow-y: auto; /* Permite rolar verticalmente se o texto for muito longo */
-}
+  .dialog-container {
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    width: 100%;
+  }
 
-.image-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto; /* Permite rolar verticalmente se houver muitas imagens */
-}
+  .text-section {
+    width: 80%;
+    flex: 1;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: justify;
+    color: white;
+    overflow-y: auto;
+  }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
-}
+  .image-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
 
-.image-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+
+  .image-grid img, .image-grid video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+  }
+
+  .full-media {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    object-fit: contain;
+  }
+
+  mat-dialog-content {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100vh;
+  }

@@ -8,9 +8,8 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ImageModalComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: { imageUrl: string }) {}
 
-  ngOnInit() {
-  }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: { mediaUrl: string, isVideo: boolean }) {}
 
+  ngOnInit() {}
 }

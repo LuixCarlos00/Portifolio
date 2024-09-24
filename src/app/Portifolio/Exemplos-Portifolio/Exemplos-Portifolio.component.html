@@ -1,8 +1,5 @@
 <body>
-
-
   <br>
-
   <div class="dialog-container">
     <div class="text-section">
       <h2>{{ selectedItem.title }}</h2>
@@ -11,7 +8,8 @@
 
     <div class="image-section">
       <div class="image-grid">
-        <img *ngFor="let image of selectedItem.imageUrl" [src]="image.url" (click)="openImage(image.url)" alt="Image">
+        <img *ngFor="let image of selectedItem.imageUrl" [src]="image.url" (click)="openMedia(image.url, false)" alt="Image">
+        <video *ngFor="let video of selectedItem.videoUrl" [src]="video.url" (click)="openMedia(video.url, true)" controls></video>
       </div>
     </div>
   </div>

@@ -17,6 +17,7 @@ body {
 .info {
   width: 80%;
   margin: 10px auto;
+  margin-top: -10px;
   padding: 10px;
   height: 80%;
 }

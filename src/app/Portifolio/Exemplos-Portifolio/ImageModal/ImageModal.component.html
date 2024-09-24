@@ -1,3 +1,8 @@
 <mat-dialog-content>
-  <img [src]="data.imageUrl" class="full-image" alt="Image">
+  <ng-container *ngIf="!data.isVideo; else videoTemplate">
+    <img [src]="data.mediaUrl" class="full-media" alt="Media">
+  </ng-container>
+  <ng-template #videoTemplate>
+    <video [src]="data.mediaUrl" class="full-media" controls></video>
+  </ng-template>
 </mat-dialog-content>
