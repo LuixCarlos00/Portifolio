@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 150vh;
   margin: 0;
-  background-color: #3a4452;
+  background-color: rgb(46, 51, 58);
   display: flex;
   flex-direction: column;
   align-items: center;

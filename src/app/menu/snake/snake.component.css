@@ -1,18 +1,21 @@
-body{
-
-
-  height: 450px;
-  background-color: white
+body {
+  height: 100vh; /* Ocupa toda a altura da tela */
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  background-color: rgb(133, 168, 243);
+  flex-direction: column;
 }
-
 
 .game-container {
   position: relative;
-  width: 400px;
-  height: 400px;
-  border: 2px solid #000;
+  width: 300px; /* Largura fixa da área do jogo */
+  height: 300px; /* Altura fixa da área do jogo */
   background-color: #000000;
   overflow: hidden;
+  border: 2px solid #000; /* Borda para definir claramente a área do jogo */
 }
 
 .snake {
@@ -29,10 +32,10 @@ body{
   background-color: red;
 }
 
-
-.play{
+.play {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 button {
@@ -45,5 +48,28 @@ button {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
-  margin-top: 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.control-button {
+  padding: 10px;
+  font-size: 18px;
+  margin: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+.control-button-row {
+  display: flex;
+  justify-content: center;
 }

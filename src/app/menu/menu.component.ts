@@ -1,44 +1,112 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CertificadosComponent } from '../Certificados/Certificados.component';
 import { SnakeComponent } from './snake/snake.component';
+import { Router } from '@angular/router';
+import { PortfolioItem, Portifolio } from '../Opcoes/Portifolio';
+import { ExemplosPortifolioComponent } from '../Portifolio/Exemplos-Portifolio/Exemplos-Portifolio.component';
+import { CertificadoModalComponent } from '../Certificados/CertificadoModal/CertificadoModal.component';
+import { Certificados } from '../Opcoes/Certificados';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
+  portfolioItems: PortfolioItem[] = Portifolio;
+  visibleItems: PortfolioItem[] = [];
+  currentPage = 0;
+  itemsPerPage = 3; // Valor inicial para desktops
+  cards = Certificados;
 
-
-
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public router: Router) {}
 
   ngOnInit() {
+    this.updateItemsPerPage();
+    this.updateVisibleItems();
   }
 
-  download() {
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.updateItemsPerPage();
+    this.updateVisibleItems();
+  }
+
+  updateItemsPerPage() {
+    const LarguraPagina = window.innerWidth;
+    if (LarguraPagina <= 768) {
+      this.itemsPerPage = 1;
+    } else {
+      this.itemsPerPage = 3;
+    }
+  }
+
+  updateVisibleItems() {
+    const startIndex = this.currentPage * this.itemsPerPage;
+    this.visibleItems = this.portfolioItems.slice(
+      startIndex,
+      startIndex + this.itemsPerPage
+    );
+  }
+
+  nextPage() {
+    if (
+      (this.currentPage + 1) * this.itemsPerPage <
+      this.portfolioItems.length
+    ) {
+      this.currentPage++;
+      this.updateVisibleItems();
+    }
+  }
+
+  previousPage() {
+    if (this.currentPage > 0) {
+      this.currentPage--;
+      this.updateVisibleItems();
+    }
+  }
+
+
+
+
+
+
+
+  // openMenu() {
+  //   const dialogRef = this.dialog.open(CertificadosComponent);
+  //   dialogRef.afterClosed().subscribe((result) => {
+  //    });
+  // }
+
+  iniciarJogo() {
+    const dialogRef = this.dialog.open(SnakeComponent, {
+      width: '380px',
+      height: '450px',
+    });
+  }
+
+    download() {
     const link = document.createElement('a');
     link.href = '../../assets/imagens/Luiz Carlos .pdf';
     link.download = 'luiz-carlos-cv.pdf';
     link.click();
   }
 
-  openMenu() {
-    const dialogRef = this.dialog.open(CertificadosComponent)
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+
+  openCertificate(card: any): void {
+    this.dialog.open(CertificadoModalComponent, {
+      data: { certificateImage: card.Certificado },
+      panelClass: 'custom-modal-container', // Classe CSS personalizada para o modal
     });
   }
 
-
-
-  iniciarJogo() {
-     const dialogRef = this.dialog.open(SnakeComponent,{
-      width: '405px',
-      height: '470px',
-
-     })
-    }
+  openProject(codigo: number) {
+    const dialogRef = this.dialog.open(ExemplosPortifolioComponent, {
+      data: { codigo: codigo },
+      width: '80%',
+      height: '80%',
+    });
+  }
 
 }

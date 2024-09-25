@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-snake',
@@ -20,7 +21,7 @@ export class SnakeComponent {
   }
 
   resetGame() {
-    this.snake = [{ x: 200, y: 200 }];
+    this.snake = [{ x: 100, y: 100 }];
     this.direction = { x: 20, y: 0 };
     this.score = 0;
     this.placeFood();
@@ -38,18 +39,22 @@ export class SnakeComponent {
   }
 
   isCollision(position: { x: number, y: number }): boolean {
-    if (position.x < 0 || position.y < 0 || position.x >= 400 || position.y >= 400) {
+     if (position.x < 0 || position.y < 0 || position.x >= 300 || position.y >= 300) {
       return true;
     }
     return this.snake.some(segment => segment.x === position.x && segment.y === position.y);
-  }
+}
 
   updateGame() {
     const head = { x: this.snake[0].x + this.direction.x, y: this.snake[0].y + this.direction.y };
 
     if (this.isCollision(head)) {
       clearInterval(this.gameInterval);
-      alert('Game Over');
+      swal({
+        title: "Game Over!",
+        text: "Tente Novamente",
+        icon: "error",
+      });
       return;
     }
 
@@ -73,7 +78,7 @@ export class SnakeComponent {
     window.addEventListener('keydown', this.changeDirection.bind(this));
   }
 
-  changeDirection(event: KeyboardEvent) {
+  changeDirection(event: { key: string }) {
     switch (event.key) {
       case 'ArrowUp':
         if (this.direction.y === 0) {
@@ -97,4 +102,5 @@ export class SnakeComponent {
         break;
     }
   }
+
 }
