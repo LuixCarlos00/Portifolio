@@ -6,6 +6,7 @@ import { PortfolioItem, Portifolio } from '../Opcoes/Portifolio';
  import { CertificadoModalComponent } from '../CertificadoModal/CertificadoModal.component';
 import { Certificados } from '../Opcoes/Certificados';
 import { ExemplosPortifolioComponent } from '../Exemplos-Portifolio/Exemplos-Portifolio.component';
+import { Esperiencia, Imagens, sobre } from '../Opcoes/Info';
 
 @Component({
   selector: 'app-menu',
@@ -13,11 +14,16 @@ import { ExemplosPortifolioComponent } from '../Exemplos-Portifolio/Exemplos-Por
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
+[x: string]: any;
   portfolioItems: PortfolioItem[] = Portifolio;
   visibleItems: PortfolioItem[] = [];
   currentPage = 0;
   itemsPerPage = 3; // Valor inicial para desktops
   cards = Certificados;
+
+sobre =  sobre;
+Esperiencia= Esperiencia;
+IMAGENS = Imagens;
 
   constructor(public dialog: MatDialog, public router: Router) {}
 

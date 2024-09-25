@@ -1,4 +1,3 @@
-/* Geral */
 body,
 html {
   margin: 0;
@@ -8,14 +7,11 @@ html {
   font-family: Arial, sans-serif;
   box-sizing: border-box;
 }
-
-/* Header */
 header {
   background-color: #5985c7;
   color: white;
   padding: 1rem 0;
 }
-
 header nav ul {
   list-style: none;
   display: flex;
@@ -23,28 +19,21 @@ header nav ul {
   padding: 0;
   margin: 0;
 }
-
 header nav ul li {
   margin: 0 1rem;
 }
-
 header nav ul li a {
   color: white;
   text-decoration: none;
 }
-
 header nav ul li a:hover {
   text-decoration: underline;
 }
-
-/* Container */
 .container {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 60px);
 }
-
-/* Carrossel */
 .head {
   background-color: #025532;
   height: 150px;
@@ -52,25 +41,21 @@ header nav ul li a:hover {
   justify-content: center;
   align-items: center;
 }
-
 .carousel {
   width: 100%;
   overflow: hidden;
 }
-
 .carousel-images {
   display: flex;
   width: 200%;
   animation: scroll 20s linear infinite;
 }
-
 .carousel img {
   width: 150px;
   height: auto;
   margin-right: 10px;
   object-fit: contain;
 }
-
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -80,15 +65,12 @@ header nav ul li a:hover {
     transform: translateX(-50%);
   }
 }
-
-/* Main Section */
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   flex: 1;
   background-color: #3c3c3c;
 }
-
 .info {
   padding: 2rem;
   width: 80%;
@@ -98,17 +80,14 @@ header nav ul li a:hover {
   height: 80%;
   color: white;
 }
-
 .info h2,
 .info h3,
 .info p {
   margin-bottom: 1rem;
 }
-
 .social-links a {
   margin-right: 10px;
 }
-
 .info button {
   background-color: #f1c50e;
   color: white;
@@ -118,41 +97,32 @@ header nav ul li a:hover {
   cursor: pointer;
   margin-top: 1rem;
 }
-
 .info button:hover {
   background-color: #e0b609;
 }
-
 .play {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .play button {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
-
-/* Seções Adicionais */
 section {
   padding: 2rem;
 }
-
 .social-links_I {
   padding: 20px;
   margin: 10px;
 }
-
 section h2 {
   margin-bottom: 1rem;
 }
-
 section p {
   margin-bottom: 1rem;
 }
-
 .content_container {
   margin-top: 75px;
   display: flex;
@@ -160,12 +130,10 @@ section p {
   align-items: center;
   width: 90%;
 }
-
 .content_cet {
   flex-direction: column;
   width: 100%;
 }
-
 button {
   background-color: #f1c50e;
   color: white;
@@ -179,7 +147,6 @@ button {
   align-self: center;
   margin-top: 2rem;
 }
-
 label{
   font-size: 12px;
   display: flex;
@@ -188,27 +155,12 @@ label{
   margin-top: 26px;
  }
 
-
  .title {
   color: white;
   font-size: 2rem;
   font-weight: bold;
   margin: 10px;
-}
-
-
-/* Footer */
-footer {
-  background-color: #292d33;
-  color: white;
-  text-align: center;
-  padding: 1rem 0;
-}
-
-
-
-
-/* Experiencias */
+ }
 .section_container {
   height: auto;
   margin: 0;
@@ -217,63 +169,43 @@ footer {
   flex-direction: column;
   align-items: center;
 }
-
 .title-container {
   margin-top: 100px;
   text-align: center;
 }
-
-
-
 .separator {
   color: white;
   width: 50%;
   border: 1.25px solid;
 }
-
-
-
 .experience_header {
   margin-top: 20px;
 }
-
 .job-title {
   color: #f1c50e;
   font-size: 18px;
 }
-
 .experience_description {
   display: flex;
   margin-top: 10px;
   word-break: break-all;
 }
-
 .experience_description p {
   color: white;
   font-size: 12px;
   text-align: justify;
 }
-
-
-
-
-/* Projetos */
-
-
-
 .experience_block {
   display: flex;
   gap: 20px;
   justify-content: center;
   width: 100%;
 }
-
 .card_content {
   flex: 1;
   overflow-y: auto;
   max-height: 250px;
 }
-
 .example_card {
   cursor: pointer;
   margin: 20px;
@@ -284,12 +216,10 @@ footer {
   height: auto;
   transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .example-card:hover {
   transform: scale(1.08);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .card_content {
   flex: 1;
   overflow-y: auto;
@@ -297,11 +227,6 @@ footer {
   margin: 0;
   padding: 10px;
 }
-
-
-
-
-/* Certificados */
 .inner_content {
   margin-top: 50px;
   width: 70%;
@@ -310,7 +235,6 @@ footer {
   overflow-y: auto;
   z-index: 10;
 }
-
 .card_container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -319,7 +243,6 @@ footer {
   box-sizing: border-box;
   width: 100%;
 }
-
 .card_C {
   background: #fff;
   border-radius: 8px;
@@ -333,13 +256,9 @@ footer {
   color: #000;
   cursor: pointer;
 }
-
 ::-webkit-scrollbar {
   display: none;
 }
-
-
-
 .card_C,
 .img_C {
   width: 80%;
@@ -347,10 +266,6 @@ footer {
   object-fit: cover;
   border: none;
 }
-
-
-
-/* Sobre */
 .Sobre {
   padding: 2rem;
   display: grid;
@@ -358,153 +273,11 @@ footer {
   height: 80%;
 }
 
-.image-container {
-  margin-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .image_wrapper {
   margin: 10px;
 }
-
 .imgSobre {
   width: 100px;
   height: auto;
 }
 
-
-
-
-
-
-
-
-
-
-/* Media Queries para Responsividade */
-@media screen and (max-width: 768px) {
-
-  body,
-  html {
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .main {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
-  p{
-    font-size: 12px;
-    margin: 0 10px;
-  }
-
-  label{
-    font-size: 12px;
-    display: flex;
-    text-justify: justify;
-    word-wrap: break-word;
-    margin-top: 26px;
-   }
-
-  li{
-    margin: 0.5rem 0;
-    font-size: 10px;
-  }
-
-  .info,
-  .play {
-    width: 100%;
-    font-size: 20px;
-    text-align: center;
-    word-wrap: break-word;
-  }
-
-  .experience_description {
-     margin-left: 0;
-    width: 100%;
-  }
-
-
-
-  .Sobre {
-    grid-template-columns: 1fr;
-  }
-
-  .inner_content {
-    background-color: #e0b609;
-    width: 100%;
-    height: 500px;
-     overflow-y: auto;
-    z-index: 10;
-  }
-
-  .card_container {
-     grid-template-columns: repeat(1, 1fr);
-   }
-
-  .card_C,
-  .img_C {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-   }
-
-
-  .title-container {
-    margin-top: 50px;
-  }
-
-  .title {
-    font-size: 1.5rem;
-  }
-
-  .job-title {
-    margin-left: 0;
-    font-size: 1rem;
-  }
-
-  .separator {
-    width: 80%;
-  }
-}
-
-
-
-
-
-
-
-
-@media screen and (max-width: 480px) {
-  .info button {
-    width: 100%;
-  }
-
-  .title {
-    font-size: 1.2rem;
-  }
-
-  .Sobre {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .card_container {
-    grid-template-columns: 1fr;
-  }
-
-  .title-container {
-    margin-top: 20px;
-  }
-}
