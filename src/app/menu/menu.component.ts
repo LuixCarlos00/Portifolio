@@ -1,12 +1,11 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CertificadosComponent } from '../Certificados/Certificados.component';
-import { SnakeComponent } from './snake/snake.component';
+ import { SnakeComponent } from './snake/snake.component';
 import { Router } from '@angular/router';
 import { PortfolioItem, Portifolio } from '../Opcoes/Portifolio';
-import { ExemplosPortifolioComponent } from '../Portifolio/Exemplos-Portifolio/Exemplos-Portifolio.component';
-import { CertificadoModalComponent } from '../Certificados/CertificadoModal/CertificadoModal.component';
+ import { CertificadoModalComponent } from '../CertificadoModal/CertificadoModal.component';
 import { Certificados } from '../Opcoes/Certificados';
+import { ExemplosPortifolioComponent } from '../Exemplos-Portifolio/Exemplos-Portifolio.component';
 
 @Component({
   selector: 'app-menu',

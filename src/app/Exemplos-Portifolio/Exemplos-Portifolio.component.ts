@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { ExemplosPortifolio } from '../Opcoes/ExemplosPorti';
 import { ImageModalComponent } from './ImageModal/ImageModal.component';
-import { ExemplosPortifolio } from '../../Opcoes/ExemplosPorti';
 
 @Component({
   selector: 'app-Exemplos-Portifolio',
