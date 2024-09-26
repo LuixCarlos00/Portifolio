@@ -12,7 +12,7 @@ export const Esperiencia: any = {
 };
 
 export const sobre: any = {
-  description: `Sou um programador nacido em 2001, apaixonado por tecnologia e jogos. Minha jornada no mundo da computação
+  description: `Sou um programador nascido em 2001, apaixonado por tecnologia e jogos. Minha jornada no mundo da computação
           começou quando ingressei no curso de Ciência da Computação na UNIFOR-MG em 2019. Desde então, minha
           curiosidade e entusiasmo por aprender coisas novas só têm crescido.
 

@@ -25,6 +25,8 @@ sobre =  sobre;
 Esperiencia= Esperiencia;
 IMAGENS = Imagens;
 
+
+
   constructor(public dialog: MatDialog, public router: Router) {}
 
   ngOnInit() {
