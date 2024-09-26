@@ -1,21 +1,21 @@
 body {
-  height: 100vh; /* Ocupa toda a altura da tela */
+  height: 400px;
   margin: 0;
-  width: 100%;
+  width: 300px;
   display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  background-color: rgb(133, 168, 243);
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(243, 177, 133);
   flex-direction: column;
 }
 
 .game-container {
   position: relative;
-  width: 300px; /* Largura fixa da área do jogo */
-  height: 300px; /* Altura fixa da área do jogo */
+  width: 260px; /* Ajuste para se alinhar ao tamanho da célula */
+  height: 300px; /* Ajuste para se alinhar ao tamanho da célula */
   background-color: #000000;
   overflow: hidden;
-  border: 2px solid #000; /* Borda para definir claramente a área do jogo */
+  border: 2px solid #000;
 }
 
 .snake {

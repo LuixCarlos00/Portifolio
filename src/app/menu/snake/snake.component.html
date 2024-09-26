@@ -1,4 +1,5 @@
 <body>
+  <br>
   <div class="game-container" #gameBoard>
     <div class="snake" *ngFor="let segment of snake" [ngStyle]="{'top': segment.y + 'px', 'left': segment.x + 'px'}"></div>
     <div class="food" [ngStyle]="{'top': food.y + 'px', 'left': food.x + 'px'}"></div>
@@ -7,11 +8,14 @@
     <button (click)="startGame()">Iniciar Jogo</button>
   </div>
   <div class="controls">
-    <button class="control-button" (click)="changeDirection({ key: 'ArrowUp' })">⬆️</button>
+    <button class="control-button" (click)="changeDirection({ key: 'ArrowLeft' })">⬅️</button>
+
     <div class="control-button-row">
-      <button class="control-button" (click)="changeDirection({ key: 'ArrowLeft' })">⬅️</button>
-      <button class="control-button" (click)="changeDirection({ key: 'ArrowRight' })">➡️</button>
+      <button class="control-button" (click)="changeDirection({ key: 'ArrowUp' })">⬆️</button>
+      <button class="control-button" (click)="changeDirection({ key: 'ArrowDown' })">⬇️</button>
+
     </div>
-    <button class="control-button" (click)="changeDirection({ key: 'ArrowDown' })">⬇️</button>
+    <button class="control-button" (click)="changeDirection({ key: 'ArrowRight' })">➡️</button>
+
   </div>
 </body>

@@ -80,16 +80,11 @@ IMAGENS = Imagens;
 
 
 
-  // openMenu() {
-  //   const dialogRef = this.dialog.open(CertificadosComponent);
-  //   dialogRef.afterClosed().subscribe((result) => {
-  //    });
-  // }
 
   iniciarJogo() {
     const dialogRef = this.dialog.open(SnakeComponent, {
-      width: '380px',
-      height: '450px',
+      width: '300px',
+      height: '400px',
     });
   }
 

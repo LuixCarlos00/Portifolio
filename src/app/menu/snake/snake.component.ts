@@ -13,6 +13,8 @@ export class SnakeComponent {
   direction: { x: number, y: number } = { x: 20, y: 0 };
   gameInterval: any;
   score: number = 0;
+  readonly cellSize = 20; // Tamanho da célula
+  readonly boardSize = 250; // Tamanho do tabuleiro
 
   constructor() { }
 
@@ -22,7 +24,7 @@ export class SnakeComponent {
 
   resetGame() {
     this.snake = [{ x: 100, y: 100 }];
-    this.direction = { x: 20, y: 0 };
+    this.direction = { x: this.cellSize, y: 0 };
     this.score = 0;
     this.placeFood();
   }
@@ -31,25 +33,26 @@ export class SnakeComponent {
     let newFoodPosition: { x: number, y: number };
     do {
       newFoodPosition = {
-        x: Math.floor(Math.random() * 20) * 20,
-        y: Math.floor(Math.random() * 20) * 20
+        x: Math.floor(Math.random() * (this.boardSize / this.cellSize)) * this.cellSize,
+        y: Math.floor(Math.random() * (this.boardSize / this.cellSize)) * this.cellSize
       };
     } while (this.snake.some(segment => segment.x === newFoodPosition.x && segment.y === newFoodPosition.y));
     this.food = newFoodPosition;
   }
 
   isCollision(position: { x: number, y: number }): boolean {
-     if (position.x < 0 || position.y < 0 || position.x >= 300 || position.y >= 300) {
+    if (position.x < 0 || position.y < 0 || position.x >= this.boardSize || position.y >= this.boardSize) {
       return true;
     }
     return this.snake.some(segment => segment.x === position.x && segment.y === position.y);
-}
+  }
 
   updateGame() {
     const head = { x: this.snake[0].x + this.direction.x, y: this.snake[0].y + this.direction.y };
 
     if (this.isCollision(head)) {
       clearInterval(this.gameInterval);
+      this.gameInterval = null;
       swal({
         title: "Game Over!",
         text: "Tente Novamente",
@@ -66,13 +69,12 @@ export class SnakeComponent {
     } else {
       this.snake.pop();
     }
-
-
   }
 
-
-
   startGame() {
+    if (this.gameInterval) {
+      return;  // Se já houver um jogo em andamento, não faz nada
+    }
     this.resetGame();
     this.gameInterval = setInterval(() => this.updateGame(), 200);
     window.addEventListener('keydown', this.changeDirection.bind(this));
@@ -82,25 +84,24 @@ export class SnakeComponent {
     switch (event.key) {
       case 'ArrowUp':
         if (this.direction.y === 0) {
-          this.direction = { x: 0, y: -20 };
+          this.direction = { x: 0, y: -this.cellSize };
         }
         break;
       case 'ArrowDown':
         if (this.direction.y === 0) {
-          this.direction = { x: 0, y: 20 };
+          this.direction = { x: 0, y: this.cellSize };
         }
         break;
       case 'ArrowLeft':
         if (this.direction.x === 0) {
-          this.direction = { x: -20, y: 0 };
+          this.direction = { x: -this.cellSize, y: 0 };
         }
         break;
       case 'ArrowRight':
         if (this.direction.x === 0) {
-          this.direction = { x: 20, y: 0 };
+          this.direction = { x: this.cellSize, y: 0 };
         }
         break;
     }
   }
-
 }
