@@ -14,18 +14,21 @@
 
 
 @media screen and (max-width: 768px) {
-  .dialog-content {
+  body{
+    background-color: #545d69;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: auto;
-    height: auto;
+  }
+
+  .dialog-content {
+    width: 100%;
+    height: 100%;
   }
 
   .modal-image {
-    width: 100%;;
-    height: 100%;;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
   }
 
 
