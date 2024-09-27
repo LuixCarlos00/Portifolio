@@ -13,12 +13,13 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CertificadoModalComponent } from './CertificadoModal/CertificadoModal.component';
   import { SnakeComponent } from './menu/snake/snake.component';
+import { ExemplosPortifolioComponent } from './Exemplos-Portifolio/Exemplos-Portifolio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-
+    ExemplosPortifolioComponent,
     ImageModalComponent,
     CertificadoModalComponent,
      SnakeComponent

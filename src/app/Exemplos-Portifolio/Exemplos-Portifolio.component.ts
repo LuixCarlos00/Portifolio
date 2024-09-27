@@ -16,6 +16,8 @@ export class ExemplosPortifolioComponent implements OnInit {
               private dialog: MatDialog) { }
 
   ngOnInit() {
+    console.log(this.portfolioItems ,'logo');
+
     this.selectedItem = this.portfolioItems.find(item => item.codigo === this.data.codigo);
   }
 

@@ -1,9 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
- import { SnakeComponent } from './snake/snake.component';
+import { SnakeComponent } from './snake/snake.component';
 import { Router } from '@angular/router';
 import { PortfolioItem, Portifolio } from '../Opcoes/Portifolio';
- import { CertificadoModalComponent } from '../CertificadoModal/CertificadoModal.component';
+import { CertificadoModalComponent } from '../CertificadoModal/CertificadoModal.component';
 import { Certificados } from '../Opcoes/Certificados';
 import { ExemplosPortifolioComponent } from '../Exemplos-Portifolio/Exemplos-Portifolio.component';
 import { Esperiencia, Imagens, sobre } from '../Opcoes/Info';
@@ -14,18 +14,16 @@ import { Esperiencia, Imagens, sobre } from '../Opcoes/Info';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-[x: string]: any;
+  [x: string]: any;
   portfolioItems: PortfolioItem[] = Portifolio;
   visibleItems: PortfolioItem[] = [];
   currentPage = 0;
   itemsPerPage = 3; // Valor inicial para desktops
   cards = Certificados;
 
-sobre =  sobre;
-Esperiencia= Esperiencia;
-IMAGENS = Imagens;
-
-
+  sobre = sobre;
+  Esperiencia = Esperiencia;
+  IMAGENS = Imagens;
 
   constructor(public dialog: MatDialog, public router: Router) {}
 
@@ -74,13 +72,6 @@ IMAGENS = Imagens;
     }
   }
 
-
-
-
-
-
-
-
   iniciarJogo() {
     const dialogRef = this.dialog.open(SnakeComponent, {
       width: '300px',
@@ -88,12 +79,13 @@ IMAGENS = Imagens;
     });
   }
 
-    download() {
+  download() {
     const link = document.createElement('a');
-    link.href = '../../assets/imagens/Luiz Carlos .pdf';
+    link.href = '../../assets/imagens/Luiz_Carlos.pdf';
     link.download = 'luiz-carlos-cv.pdf';
     link.click();
   }
+
 
 
   openCertificate(card: any): void {
@@ -110,5 +102,4 @@ IMAGENS = Imagens;
       height: '80%',
     });
   }
-
 }
