@@ -1,12 +1,3 @@
-.full-media {
-  width: 100%;
-  height: auto;
-  max-height: 100vh;
-  object-fit: contain;
-  background-color: #545d69;
-
-}
-
 body {
   height: 100vh;
   margin: 0;
@@ -14,6 +5,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.full-media {
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  object-fit: contain;
+  background-color: #545d69;
+
 }
 
 mat-dialog-content {
@@ -24,4 +24,26 @@ mat-dialog-content {
   justify-content: center;
   align-items: center;
   max-height: 100vh;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  body {
+    height:  80vh;
+    width: 100vh;
+    margin: 0;
+    background-color: #545d69;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+  }
+
+
+  .full-media {
+
+     object-fit: contain;
+    background-color: #545d69;
+  }
 }
