@@ -14,7 +14,7 @@ export class SnakeComponent {
   gameInterval: any;
   score: number = 0;
   readonly cellSize = 20; // Tamanho da célula
-  readonly boardSize = 250; // Tamanho do tabuleiro
+  readonly boardSize = 240; // Tamanho do tabuleiro
 
   constructor() { }
 
@@ -76,7 +76,7 @@ export class SnakeComponent {
       return;  // Se já houver um jogo em andamento, não faz nada
     }
     this.resetGame();
-    this.gameInterval = setInterval(() => this.updateGame(), 200);
+    this.gameInterval = setInterval(() => this.updateGame(), 350);
     window.addEventListener('keydown', this.changeDirection.bind(this));
   }
 
