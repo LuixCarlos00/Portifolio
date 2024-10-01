@@ -7,6 +7,7 @@ import { CertificadoModalComponent } from '../CertificadoModal/CertificadoModal.
 import { Certificados } from '../Opcoes/Certificados';
 import { ExemplosPortifolioComponent } from '../Exemplos-Portifolio/Exemplos-Portifolio.component';
 import { Esperiencia, Imagens, sobre } from '../Opcoes/Info';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-menu',
@@ -16,6 +17,8 @@ import { Esperiencia, Imagens, sobre } from '../Opcoes/Info';
 export class MenuComponent implements OnInit {
   [x: string]: any;
   portfolioItems: PortfolioItem[] = Portifolio;
+  safeHtmlDescriptions: SafeHtml[] = [];
+
   visibleItems: PortfolioItem[] = [];
   currentPage = 0;
   itemsPerPage = 3; // Valor inicial para desktops
@@ -25,7 +28,11 @@ export class MenuComponent implements OnInit {
   Esperiencia = Esperiencia;
   IMAGENS = Imagens;
 
-  constructor(public dialog: MatDialog, public router: Router) {}
+  constructor(public dialog: MatDialog, public router: Router,private sanitizer: DomSanitizer) {
+    this.safeHtmlDescriptions = this.portfolioItems.map(item =>
+      this.sanitizer.bypassSecurityTrustHtml(item.description)
+    );
+  }
 
   ngOnInit() {
     this.updateItemsPerPage();

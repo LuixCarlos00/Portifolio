@@ -23,6 +23,14 @@ export const Portifolio: PortfolioItem[] = [
       dashboards personalizados.`,
     imageUrl: '../../assets/imagens/SoftwareDeClinica/logo.png'
   },
+  {
+    codigo: 3,
+    title: 'IA - Chat Boot - gemini',
+    description: `Este projeto é um chatbot desenvolvido utilizando Python, VSCode e algumas bibliotecas
+     específicas para reconhecimento de fala, síntese de voz e integração com o Google Generative AI.`,
+    imageUrl: '../../assets/imagens/chatBoot/chatBot5.png'
+  },
+
 
 
 ];

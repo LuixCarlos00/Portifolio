@@ -87,7 +87,7 @@ li{ margin: 0.5rem 0; font-size: 10px;}
             <img mat-card-image [src]="item.imageUrl" alt="Image">
             <mat-card-content class="card_content">
               <ul> <li><label>{{ item.title }}</label></li></ul>
-              <label>{{ item.description }}</label>
+              <div [innerHTML]="item.description"></div>
             </mat-card-content>
           </mat-card>
         </div>
