@@ -78,7 +78,7 @@ export const ExemplosPortifolio: ExemplosPortifolio[] = [
 
   {
     codigo: 3,
-    title: 'Plataforma de Gerenciamento para Clínica Médica',
+    title: 'IA - Chat Boot - gemini',
     description: `Este chatbot utiliza a biblioteca SpeechRecognition para reconhecer comandos de voz,
      pyttsx3 para síntese de voz e google-generativeai para gerar respostas utilizando o modelo
      generativo da Google.
