@@ -107,8 +107,8 @@ export const Certificados: Certificados[] = [
   },
   {
     codigo: 21,
-    templateImage: '../../assets/imagens/certificados/TDD_E_JAVA.png',
-    Certificado: '../../assets/imagens/certificados/TDD_E_JAVA.png',
+    templateImage: '../../assets/imagens/certificados/Pentest.png',
+    Certificado: '../../assets/imagens/certificados/Pentest.png',
   },
   {
     codigo: 22,
