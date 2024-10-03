@@ -14,6 +14,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { CertificadoModalComponent } from './CertificadoModal/CertificadoModal.component';
   import { SnakeComponent } from './menu/snake/snake.component';
 import { ExemplosPortifolioComponent } from './Exemplos-Portifolio/Exemplos-Portifolio.component';
+import { EnviarEmailComponent } from './enviar-email/enviar-email.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ExemplosPortifolioComponent } from './Exemplos-Portifolio/Exemplos-Port
     ExemplosPortifolioComponent,
     ImageModalComponent,
     CertificadoModalComponent,
-     SnakeComponent
+     SnakeComponent,
+     EnviarEmailComponent
   ],
   imports: [
     BrowserModule,
