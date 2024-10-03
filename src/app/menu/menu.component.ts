@@ -8,6 +8,7 @@ import { Certificados } from '../Opcoes/Certificados';
 import { ExemplosPortifolioComponent } from '../Exemplos-Portifolio/Exemplos-Portifolio.component';
 import { Esperiencia, Imagens, sobre } from '../Opcoes/Info';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { EnviarEmailComponent } from '../enviar-email/enviar-email.component';
 
 @Component({
   selector: 'app-menu',
@@ -107,6 +108,13 @@ export class MenuComponent implements OnInit {
       data: { codigo: codigo },
       width: '80%',
       height: '80%',
+    });
+  }
+
+  contato() {
+    const dialogRef = this.dialog.open(EnviarEmailComponent, {
+      width: '300px',
+      height: '400px',
     });
   }
 }
