@@ -1,16 +1,15 @@
-<!-- email.component.html -->
-<form #emailForm="ngForm" (ngSubmit)="sendEmail(emailForm)">
-  <div>
-    <label for="fromName">Seu Nome:</label>
-    <input type="text" id="fromName" name="fromName" ngModel>
+<form #emailForm="ngForm" (ngSubmit)="sendEmail(emailForm)" class="email-form">
+  <div class="form-group">
+    <label for="toName">Seu Nome:</label>
+    <input type="text" id="toName" name="toName" ngModel class="form-control">
   </div>
-  <div>
-    <label for="toName">Nome do Destinatário:</label>
-    <input type="text" id="toName" name="toName" ngModel>
+  <div class="form-group">
+    <label for="toEmail">Seu Email: </label>
+    <input type="email" id="toEmail" name="toEmail" ngModel class="form-control">
   </div>
-  <div>
-    <label for="message">Mensagem:</label>
-    <textarea id="message" name="message" ngModel></textarea>
+  <div class="form-group">
+    <label for="toMessage">Mensagem:</label>
+    <textarea id="toMessage" name="toMessage" ngModel class="form-control"></textarea>
   </div>
-  <button type="submit">Enviar E-mail</button>
+  <button type="submit" class="btn btn-primary">Enviar E-mail</button>
 </form>

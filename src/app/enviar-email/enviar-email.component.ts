@@ -9,21 +9,18 @@ import { NgForm } from '@angular/forms';
 })
 export class EnviarEmailComponent {
 
-  // Método para enviar o e-mail
-  sendEmail(form: NgForm) {
-    // Defina os parâmetros do seu template
-    const templateParams = {
-      to_name: form.value.toName,
-      from_name: form.value.fromName,
-      message: form.value.message
-    };
+   sendEmail(form: NgForm) {
 
-    // Envie o e-mail usando EmailJS
-    emailjs.send('your_service_id', 'your_template_id', templateParams, 'your_user_id')
-      .then((response: EmailJSResponseStatus) => {
-        console.log('E-mail enviado com sucesso!', response.status, response.text);
-      }, (err) => {
-        console.error('Falha ao enviar o e-mail...', err);
+
+    emailjs.send("service_yah7w5u","template_wb5vqkm",{
+      Subject: "Oferta de Trabalho",
+      name: form.value.toName,
+      email: form.value.fromName,
+      mensage: form.value.message,
       });
+
+
+
+
   }
 }
