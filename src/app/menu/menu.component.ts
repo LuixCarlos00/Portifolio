@@ -89,7 +89,7 @@ export class MenuComponent implements OnInit {
 
   download() {
     const link = document.createElement('a');
-    link.href = '../../assets/imagens/Luiz_Carlos.pdf';
+    link.href = '../../assets/imagens/Luiz_Carlos-Cv.pdf';
     link.download = 'luiz-carlos-cv.pdf';
     link.click();
   }
@@ -117,5 +117,4 @@ export class MenuComponent implements OnInit {
       height: '400px',
     });
   }
-}
-https://www.thingiverse.com/thing:6764614
+} //https://www.thingiverse.com/thing:6764614
