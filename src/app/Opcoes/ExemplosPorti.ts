@@ -12,7 +12,6 @@ interface ExemplosPortifolio {
   }[];
 }
 
-
 export const ExemplosPortifolio: ExemplosPortifolio[] = [
   {
     codigo: 1,
@@ -101,5 +100,79 @@ export const ExemplosPortifolio: ExemplosPortifolio[] = [
       { url: '../../assets/imagens/chatBoot/chatBot4.png' },
     ],
     videoUrl: [],
+  },
+  {
+    codigo: 4,
+    title: 'Projeto de Download e Transcrição de Vídeos e Áudios do YouTube',
+    description: `Descrição do Projeto
+    <br><br>
+     Este projeto é uma aplicação GUI desenvolvida em Python que permite <br>
+     baixar vídeos e áudios do YouTube e realizar a transcrição de áudios<br>
+     em texto.
+
+    <br><br>
+
+     A aplicação utiliza diversas bibliotecas como <strong>pytubefix</strong>,<br>
+     <strong>tkinter</strong>, <strong>speech_recognition</strong>, e <strong>pydub</strong> para oferecer uma interface amigável <br>
+     e funcionalidades robustas. <br> Abaixo estão os  principais componentes e funcionalidades do projeto.
+
+    <br><br>
+
+    <h1>Funcionalidades</h1>
+    <br>
+    <h3>Download de Vídeos do YouTube</h3>
+
+    <li>
+    Usuários podem inserir um link de vídeo do YouTube e baixar o vídeo em alta resolução.
+    Os vídeos são salvos na pasta "Videos_Downloads" no diretório do usuário.
+    </li>
+
+   <br><br>
+
+  <h3>Download de Áudios do YouTube</h3>
+    <li>
+    Permite baixar apenas o áudio dos vídeos do YouTube.
+    Os áudios são salvos na pasta "Audios_Downloads" no diretório do usuário.
+    </li>
+
+    <br><br>
+
+  <h3>Download de Múltiplos Vídeos e Áudios</h3>
+
+    <li>
+    Suporte para baixar múltiplos vídeos e áudios a partir de uma lista de URLs separadas por vírgulas.
+    </li>
+
+    <br><br>
+
+  <h3>Transcrição de Áudios</h3>
+    <li>
+    Transcreve arquivos de áudio (MP3, MP4, WAV) em texto utilizando a biblioteca speech_recognition.
+    Os arquivos de áudio são convertidos para o formato WAV, divididos em partes menores para processamento, e então transcritos.
+    </li>
+
+    <br><br>
+
+  <h3>Interface Gráfica</h3>
+    <li>
+    Desenvolvida com tkinter, a interface gráfica permite fácil interação do usuário com a aplicação.
+    </li>
+<br>
+    <li>
+    Modo escuro disponível para melhor visualização.
+   </li>
+
+
+     `,
+    imageUrl: [
+      {
+        url: '../../assets/imagens/Analizador-De-Video-Youtube/analizadorVideo.png',
+      },
+    ],
+    videoUrl: [
+      {
+        url: '../../assets/imagens/Analizador-De-Video-Youtube/Analizador-De-Video-Youtube ‐ Feito com o Clipchamp.mp4',
+      },
+    ],
   },
 ];

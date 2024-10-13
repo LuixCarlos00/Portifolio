@@ -79,6 +79,8 @@ li{ margin: 0.5rem 0; font-size: 10px;}
             style="padding: 10px; background-color: #f1c50e; color: white;">Entrar em Contato</button></a>
       </div>
     </section>
+
+
     <section id="Projetos" class="section_container" style="background-color: #423e46;">
       <div class="title"><p>Projetos</p></div>
       <div class="content_container">
@@ -88,13 +90,15 @@ li{ margin: 0.5rem 0; font-size: 10px;}
             <img mat-card-image [src]="item.imageUrl" alt="Image">
             <mat-card-content class="card_content">
               <ul> <li><label>{{ item.title }}</label></li></ul>
-              <div [innerHTML]="item.description"></div>
+              <div [innerHTML]="sanitize(item.description)"></div>
             </mat-card-content>
           </mat-card>
         </div>
         <button mat-button (click)="nextPage()">&#9654;</button>
       </div>
     </section>
+
+
     <section id="Certificados" class="section_container" style="background-color: #39343d;">
       <div class="title"><p>Certificados</p></div>
       <div class="inner_content">

@@ -9,6 +9,8 @@ import { ExemplosPortifolioComponent } from '../Exemplos-Portifolio/Exemplos-Por
 import { Esperiencia, Imagens, sobre } from '../Opcoes/Info';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { EnviarEmailComponent } from '../enviar-email/enviar-email.component';
+import { SanitizerService } from '../service/sanitizer.service';
+
 
 @Component({
   selector: 'app-menu',
@@ -29,7 +31,10 @@ export class MenuComponent implements OnInit {
   Esperiencia = Esperiencia;
   IMAGENS = Imagens;
 
-  constructor(public dialog: MatDialog, public router: Router,private sanitizer: DomSanitizer) {
+  constructor(public dialog: MatDialog, public router: Router,private sanitizer: DomSanitizer,
+    private sanitizerService: SanitizerService // Injeção do serviço
+
+  ) {
     this.safeHtmlDescriptions = this.portfolioItems.map(item =>
       this.sanitizer.bypassSecurityTrustHtml(item.description)
     );
@@ -109,6 +114,10 @@ export class MenuComponent implements OnInit {
       width: '80%',
       height: '80%',
     });
+  }
+
+  sanitize(html: string): string {
+    return this.sanitizerService.sanitize(html);
   }
 
   contato() {

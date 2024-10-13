@@ -3,9 +3,8 @@
   <div class="dialog-container">
     <div class="text-section">
       <h2>{{ selectedItem.title }}</h2>
-      <p>{{ selectedItem.description }}</p>
+      <div [innerHTML]="sanitize(selectedItem.description)"></div>
     </div>
-
     <div class="image-section">
       <div class="image-grid">
         <img *ngFor="let image of selectedItem.imageUrl" [src]="image.url" (click)="openMedia(image.url, false)" alt="Image">
