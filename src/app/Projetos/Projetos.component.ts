@@ -8,8 +8,8 @@ import { SanitizerService } from '../service/sanitizer.service';
 
 @Component({
   selector: 'app-Projetos',
-  templateUrl: './projetos.component.html',
-  styleUrls: ['./projetos.component.css']
+  templateUrl: './Projetos.component.html',
+  styleUrls: ['./Projetos.component.css']
 })
 export class ProjetosComponent implements OnInit {
   visibleItems: PortfolioItem[] = [];

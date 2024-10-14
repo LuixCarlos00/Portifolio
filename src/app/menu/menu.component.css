@@ -5,7 +5,7 @@ body {
   height: 100%;
   font-family: Arial, sans-serif;
   box-sizing: border-box;
-  overflow-x: hidden; /* Adiciona esta linha */
+  overflow-x: hidden;
 }
 
 header {
@@ -142,14 +142,14 @@ button {
   }
 
   .info {
-    width: 100%; /* Ajuste para garantir que a info ocupe 100% da largura disponível */
+    width: 100%;
   }
 
   .social-links_I {
-    font-size: 2rem; /* Ajuste o tamanho dos ícones para telas menores */
+    font-size: 2rem;
   }
 
   button {
-    width: 100%; /* Ajuste para garantir que o botão ocupe 100% da largura disponível */
+    width: 100%;
   }
 }
