@@ -25,9 +25,8 @@ export class MenuComponent implements OnInit {
   visibleItems: PortfolioItem[] = [];
   currentPage = 0;
   itemsPerPage = 3; // Valor inicial para desktops
-  cards = Certificados;
 
-  sobre = sobre;
+
   Esperiencia = Esperiencia;
   IMAGENS = Imagens;
 
@@ -40,50 +39,10 @@ export class MenuComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-    this.updateItemsPerPage();
-    this.updateVisibleItems();
-  }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    this.updateItemsPerPage();
-    this.updateVisibleItems();
-  }
+  ngOnInit(): void {
+   }
 
-  updateItemsPerPage() {
-    const LarguraPagina = window.innerWidth;
-    if (LarguraPagina <= 768) {
-      this.itemsPerPage = 1;
-    } else {
-      this.itemsPerPage = 3;
-    }
-  }
-
-  updateVisibleItems() {
-    const startIndex = this.currentPage * this.itemsPerPage;
-    this.visibleItems = this.portfolioItems.slice(
-      startIndex,
-      startIndex + this.itemsPerPage
-    );
-  }
-
-  nextPage() {
-    if (
-      (this.currentPage + 1) * this.itemsPerPage <
-      this.portfolioItems.length
-    ) {
-      this.currentPage++;
-      this.updateVisibleItems();
-    }
-  }
-
-  previousPage() {
-    if (this.currentPage > 0) {
-      this.currentPage--;
-      this.updateVisibleItems();
-    }
-  }
 
   iniciarJogo() {
     const dialogRef = this.dialog.open(SnakeComponent, {
@@ -101,12 +60,7 @@ export class MenuComponent implements OnInit {
 
 
 
-  openCertificate(card: any): void {
-    this.dialog.open(CertificadoModalComponent, {
-      data: { certificateImage: card.Certificado },
-      panelClass: 'custom-modal-container', // Classe CSS personalizada para o modal
-    });
-  }
+
 
   openProject(codigo: number) {
     const dialogRef = this.dialog.open(ExemplosPortifolioComponent, {

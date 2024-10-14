@@ -1,22 +1,4 @@
-<html lang="pt-br">
-<head>
-  <style>
-@media screen and (max-width: 768px) {
-.main { grid-template-columns: 1fr; padding: 1rem;}  p{  font-size: 12px;  margin: 0 10px;}
-label{ font-size: 12px; display: flex;text-justify: justify;word-wrap: break-word;margin-top: 26px;}
-li{ margin: 0.5rem 0; font-size: 10px;}
-.info,.play { width: 100%; font-size: 20px; text-align: center; word-wrap: break-word;}
-.experience_description {margin-left: 0; width: 100%;}
-.Sobre {  grid-template-columns: 1fr;}
-.inner_content {  width: 100%; height: 500px; overflow-y: auto; z-index: 10;}
-.card_container { grid-template-columns: repeat(1, 1fr);}
-.card_C,.img_C {width: 100%;height: auto;object-fit: cover;}
-.title-container {margin-top: 50px;}
-.title {font-size: 1.5rem;}
-.job-title { margin-left: 0;font-size: 1rem;}
-}
-  </style>
-</head>
+
 <body>
   <header>
     <nav>
@@ -25,7 +7,7 @@ li{ margin: 0.5rem 0; font-size: 10px;}
         <li><a href="#Projetos">Projetos</a></li>
         <li><a href="#Certificados">Certificados</a></li>
         <li><a href="#Sobre">Sobre</a></li>
-        <li><a  style="cursor: pointer" (click)="contato()" >Contato</a></li>
+        <li><a style="cursor: pointer" (click)="contato()">Contato</a></li>
       </ul>
     </nav>
   </header>
@@ -53,73 +35,27 @@ li{ margin: 0.5rem 0; font-size: 10px;}
             <i class="fa-brands fa-github fa-4x social-links_I" style="color: #6e5494;"></i>
           </a>
         </div>
-        <button (click)="download()"> Currículo</button>
+        <div style="  width: 80%;">
+          <button (click)="download()"> Currículo</button>
+
+        </div>
       </div>
       <div class="play">
         <button (click)="iniciarJogo()"> <i class="fa fa-play"></i></button>
       </div>
     </section>
-    <section id="Experiencias" class="section_container">
-      <div class="title"><div>Experiências</div></div>
-      <div class="content_container   content_cet">
-        <div class="info">
-          <div class="experience_header">
-            <span class="job-title">Desenvolvedor de Sistemas</span>
-            <br>
-            <li>Março, 2023 - March, 2023</li>
-          </div>
-          <br>
-          <label>
-            {{Esperiencia.description}}
-          </label>
-        </div>
-      </div>
-      <div>
-        <a href="mailto:luixcarlos00@gmail.com"> <button
-            style="padding: 10px; background-color: #f1c50e; color: white;">Entrar em Contato</button></a>
-      </div>
+    <section id="Experiencias" class="section_container" style="background-color: rgb(45, 47, 51);">
+      <app-Experiencias></app-Experiencias>
     </section>
-
-
     <section id="Projetos" class="section_container" style="background-color: #423e46;">
-      <div class="title"><p>Projetos</p></div>
-      <div class="content_container">
-        <button mat-button (click)="previousPage()">&#9664;</button>
-        <div class="experience_block">
-          <mat-card class="example_card" *ngFor="let item of visibleItems" (click)="openProject(item.codigo)">
-            <img mat-card-image [src]="item.imageUrl" alt="Image">
-            <mat-card-content class="card_content">
-              <ul> <li><label>{{ item.title }}</label></li></ul>
-              <div [innerHTML]="sanitize(item.description)"></div>
-            </mat-card-content>
-          </mat-card>
-        </div>
-        <button mat-button (click)="nextPage()">&#9654;</button>
-      </div>
+      <app-Projetos></app-Projetos>
     </section>
-
-
     <section id="Certificados" class="section_container" style="background-color: #39343d;">
-      <div class="title"><p>Certificados</p></div>
-      <div class="inner_content">
-        <div class="card_container">
-          <div class="card_C" *ngFor="let card of cards" (click)="openCertificate(card)">
-            <img class="img_C" [src]="card.templateImage" alt="Template Image">
-          </div>
-        </div>
-      </div>
+      <app-certificados></app-certificados>
     </section>
-    <section id="Sobre" class="section_container">
-      <div class="title ">Sobre Mim</div>
-      <div class="info"><label> {{sobre.description}}</label> </div>
-      <div class="title">Expecialidades</div>
-        <div class="image_wrapper">
-          <img class="imgSobre" src="../../assets/imagens/LogoSpring.png" alt="Logo Spring Boot" title="Spring Boot">
-          <img class="imgSobre" src="../../assets/imagens/LogoAngular.png" alt="Logo Angular" title="Angular">
-          <img class="imgSobre" src="../../assets/imagens/LogoJava.png" alt="Logo Java" title="Java">
-          <img class="imgSobre" src="../../assets/imagens/LogoTtypeScrip.png" alt="Logo TypeScript" title="TypeScript">
-        </div>
+    <section id="Sobre" class="section_container" style="background-color: rgb(45, 47, 51)">
+      <app-sobre></app-sobre>
     </section>
   </div>
 </body>
-</html>
+

@@ -1,0 +1,16 @@
+<section id="Projetos" class="section_container"  >
+  <div class="title"><p>Projetos</p></div>
+  <div class="content_container">
+    <button mat-button (click)="previousPage()">&#9664;</button>
+    <div class="experience_block">
+      <mat-card class="example_card" *ngFor="let item of visibleItems" (click)="openProject(item.codigo)">
+        <img mat-card-image [src]="item.imageUrl" alt="Image">
+        <mat-card-content class="card_content">
+          <ul> <li><label>{{ item.title }}</label></li></ul>
+          <div [innerHTML]="sanitize(item.description)"></div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <button mat-button (click)="nextPage()">&#9654;</button>
+  </div>
+</section>

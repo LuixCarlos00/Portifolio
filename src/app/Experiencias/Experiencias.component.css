@@ -1,0 +1,98 @@
+.section_container {
+  height: auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.title {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px;
+  text-align: center;
+}
+
+.content_container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.info {
+  padding: 1rem;
+  width: 100%;
+  margin: 10px auto;
+  color: white;
+}
+
+.infoDescription {
+  width: 100%;
+  color: white;
+
+}
+
+.experience_header {
+  margin-top: 1rem;
+}
+
+.job-title {
+  color: #f1c50e;
+  font-size: 1.2rem;
+}
+
+
+.contact-button {
+  background-color: #f1c50e;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 2rem;
+  width: 200px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.contact-button:hover {
+  background-color: #e0b609;
+}
+
+.contact_button_container{
+ margin-left : 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+
+  .info {
+    color: white;
+    padding: 1rem;
+  }
+
+  .infoDescription {
+     width: 100%;
+     color: white;
+
+  }
+
+  .job-title {
+    font-size: 1rem;
+  }
+
+  .contact-button {
+    width: 100%;
+  }
+
+  .contact_button_container{
+    margin-left : 0px;
+   }
+}

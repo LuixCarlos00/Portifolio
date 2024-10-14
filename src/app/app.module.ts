@@ -15,17 +15,25 @@ import { CertificadoModalComponent } from './CertificadoModal/CertificadoModal.c
   import { SnakeComponent } from './menu/snake/snake.component';
 import { ExemplosPortifolioComponent } from './Exemplos-Portifolio/Exemplos-Portifolio.component';
 import { EnviarEmailComponent } from './enviar-email/enviar-email.component';
+import { SobreComponent } from './sobre/sobre.component';
+import { CertificadosComponent } from './certificados/certificados.component';
+import { ProjetosComponent } from './Projetos/Projetos.component';
+import { ExperienciasComponent } from './Experiencias/Experiencias.component';
 
 @NgModule({
-  declarations: [
+  declarations: [				
     AppComponent,
     MenuComponent,
     ExemplosPortifolioComponent,
     ImageModalComponent,
     CertificadoModalComponent,
      SnakeComponent,
-     EnviarEmailComponent
-  ],
+     EnviarEmailComponent,
+      SobreComponent,
+      CertificadosComponent,
+      ProjetosComponent,
+      ExperienciasComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
