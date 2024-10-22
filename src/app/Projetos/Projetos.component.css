@@ -8,11 +8,10 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1200px;
-  /* Definindo uma largura máxima */
-  padding: 20px;
-  /* Adicionando padding */
+
 }
+
+
 
 .title {
   color: white;
