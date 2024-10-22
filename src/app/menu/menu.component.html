@@ -1,4 +1,3 @@
-
 <body>
   <header>
     <nav>
@@ -11,16 +10,24 @@
       </ul>
     </nav>
   </header>
+
   <div class="container">
+
+
     <div class="head">
       <div class="carousel">
         <div class="carousel-images">
           <ng-container *ngFor="let imagem of IMAGENS.pages">
             <img [src]="imagem.url" alt="Imagem">
           </ng-container>
+          <ng-container *ngFor="let imagem of IMAGENS.pages">
+            <img [src]="imagem.url" alt="Imagem">
+          </ng-container>
         </div>
       </div>
     </div>
+
+
     <section class="main">
       <div class="info">
         <h2>Quem sou eu? Meu nome é <br> Luiz Carlos <br> Sou programador e desenvolvedor Back-End </h2>
@@ -58,4 +65,3 @@
     </section>
   </div>
 </body>
-
