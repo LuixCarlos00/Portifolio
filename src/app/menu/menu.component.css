@@ -137,6 +137,10 @@ button {
   margin-top: 2rem;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 @media screen and (max-width: 768px) {
   .main {
     grid-template-columns: 1fr;

@@ -1,24 +1,27 @@
 .section_container {
   height: auto;
   margin: 0;
-   display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .title {
   color: white;
   font-size: 2rem;
   font-weight: bold;
   margin: 10px;
- }
- .inner_content {
+}
+
+.inner_content {
   margin-top: 50px;
   width: 70%;
-  height: 60%;
+  max-height: 500px;
   justify-content: center;
   overflow-y: auto;
   z-index: 10;
 }
+
 .card_container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -27,6 +30,7 @@
   box-sizing: border-box;
   width: 100%;
 }
+
 .card_C {
   background: #fff;
   border-radius: 8px;
@@ -40,6 +44,7 @@
   color: #000;
   cursor: pointer;
 }
+
 .card_C,
 .img_C {
   width: 80%;
@@ -47,6 +52,20 @@
   object-fit: cover;
   border: none;
 }
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1613a1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b30a0a;
+}
+
 @media screen and (max-width: 768px) {
   .inner_content {
     width: 100%;
@@ -54,9 +73,11 @@
     overflow-y: auto;
     z-index: 10;
   }
+
   .card_container {
     grid-template-columns: repeat(1, 1fr);
   }
+
   .card_C,
   .img_C {
     width: 100%;
