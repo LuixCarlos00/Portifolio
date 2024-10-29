@@ -137,12 +137,34 @@ export const Certificados: Certificados[] = [
   },
   {
     codigo: 27,
-    templateImage: '../../assets/imagens/certificados/emBreve.png',
-    Certificado: '../../assets/imagens/certificados/emBreve.png',
+    templateImage: '../../assets/imagens/certificados/HTMLeCSSClassesposicionamentoeFlexbox.png',
+    Certificado: '../../assets/imagens/certificados/HTMLeCSSClassesposicionamentoeFlexbox.png',
   },
   {
     codigo: 28,
     templateImage: '../../assets/imagens/certificados/emBreve.png',
     Certificado: '../../assets/imagens/certificados/emBreve.png',
+  }
+  ,
+  {
+    codigo: 29,
+    templateImage: '../../assets/imagens/certificados/emBreve.png',
+    Certificado: '../../assets/imagens/certificados/emBreve.png',
   },
+  {
+    codigo: 30,
+    templateImage: '../../assets/imagens/certificados/emBreve.png',
+    Certificado: '../../assets/imagens/certificados/emBreve.png',
+  }
+  ,
+  {
+    codigo: 31,
+    templateImage: '../../assets/imagens/certificados/emBreve.png',
+    Certificado: '../../assets/imagens/certificados/emBreve.png',
+  },
+  {
+    codigo: 32,
+    templateImage: '../../assets/imagens/certificados/emBreve.png',
+    Certificado: '../../assets/imagens/certificados/emBreve.png',
+  }
 ];
