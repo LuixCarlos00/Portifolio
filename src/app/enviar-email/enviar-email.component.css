@@ -3,7 +3,6 @@
   margin: 0 auto;
   height: 100%;
   padding: 20px;
-  background-color: #cbd1d4;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow-y: hidden;
@@ -11,6 +10,12 @@
 
 .form-group {
   margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  background-color: #ccc;
 }
 
 .form-group label {
