@@ -142,8 +142,8 @@ export const Certificados: Certificados[] = [
   },
   {
     codigo: 28,
-    templateImage: '../../assets/imagens/certificados/emBreve.png',
-    Certificado: '../../assets/imagens/certificados/emBreve.png',
+    templateImage: '../../assets/imagens/certificados/HTMLeCSSambientesdedesenvolvimentoestruturadearquivoetags.png',
+    Certificado: '../../assets/imagens/certificados/HTMLeCSSambientesdedesenvolvimentoestruturadearquivoetags.png',
   }
   ,
   {
