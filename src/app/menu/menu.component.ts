@@ -1,28 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SnakeComponent } from './snake/snake.component';
 import { ExemplosPortifolioComponent } from '../Exemplos-Portifolio/Exemplos-Portifolio.component';
-import { CarouselImages } from '../Opcoes/Info';
 import { EnviarEmailComponent } from '../enviar-email/enviar-email.component';
-
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css'],
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit {
   private static readonly CV_PATH = 'assets/imagens/Luiz_Carlos-Cv.pdf';
   private static readonly CV_FILENAME = 'luiz-carlos-cv.pdf';
+  private static readonly SCROLL_THRESHOLD = 50;
 
-  readonly carouselImages = CarouselImages;
+  isScrolled = false;
+  isMobileMenuOpen = false;
+  currentYear = new Date().getFullYear();
 
   constructor(private dialog: MatDialog) {}
 
+  ngOnInit(): void {
+    this.checkScroll();
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.checkScroll();
+  }
+
+  private checkScroll(): void {
+    this.isScrolled = window.scrollY > MenuComponent.SCROLL_THRESHOLD;
+  }
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    document.body.style.overflow = this.isMobileMenuOpen ? 'hidden' : '';
+  }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
+    document.body.style.overflow = '';
+  }
+
   openSnakeGame(): void {
     this.dialog.open(SnakeComponent, {
-      width: '300px',
-      height: '400px'
+      width: '350px',
+      height: '450px',
+      panelClass: 'snake-dialog'
     });
   }
 
@@ -36,15 +61,19 @@ export class MenuComponent {
   openProject(projectCode: number): void {
     this.dialog.open(ExemplosPortifolioComponent, {
       data: { codigo: projectCode },
-      width: '80%',
-      height: '80%'
+      width: '90%',
+      maxWidth: '1000px',
+      height: '85%',
+      panelClass: 'project-dialog'
     });
   }
 
   openContactForm(): void {
+    this.closeMobileMenu();
     this.dialog.open(EnviarEmailComponent, {
-      width: '300px',
-      height: '400px'
+      width: '90%',
+      maxWidth: '500px',
+      panelClass: 'contact-dialog'
     });
   }
 }

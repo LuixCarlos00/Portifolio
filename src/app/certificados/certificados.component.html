@@ -1,11 +1,30 @@
 <section id="Certificados" class="section_container">
-  <div class="title">
-    <p>Certificados</p>
-  </div>
-  <div class="inner_content">
-    <div class="card_container">
-      <div class="card_C" *ngFor="let card of cards" (click)="openCertificate(card)">
-        <img class="img_C" [src]="card.templateImage" alt="Template Image">
+  <div class="certificates">
+    <div class="container">
+      <div class="certificates__header">
+        <h2 class="section-title">Certificados</h2>
+        <p class="section-subtitle">
+          Certificações e cursos que comprovam meu compromisso com aprendizado contínuo.
+        </p>
+      </div>
+
+      <div class="certificates__grid">
+        <article 
+          class="certificate-card card"
+          *ngFor="let card of cards; let i = index"
+          (click)="openCertificate(card)"
+          [style.animation-delay]="(i * 0.05) + 's'"
+          tabindex="0"
+          role="button"
+          aria-label="Ver certificado">
+          
+          <div class="certificate-card__image">
+            <img [src]="card.templateImage" alt="Certificado" loading="lazy">
+            <div class="certificate-card__overlay">
+              <i class="material-icons">zoom_in</i>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </div>

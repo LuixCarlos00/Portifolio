@@ -1,20 +1,64 @@
-<section id="Projetos" class="section_container">
-  <div class="title">
-    <p>Projetos</p>
-  </div>
-  <div class="content_container">
-    <button mat-button (click)="previousPage()">&#9664;</button>
-    <div class="experience_block">
-      <mat-card class="example_card" *ngFor="let item of visibleItems" (click)="openProject(item.codigo)">
-        <img mat-card-image [src]="item.imageUrl" alt="Image">
-        <mat-card-content class="card_content">
-          <ul>
-            <li><label>{{ item.title }}</label></li>
-          </ul>
-          <div [innerHTML]="sanitize(item.description)"></div>
-        </mat-card-content>
-      </mat-card>
+<div class="projects">
+  <div class="container">
+    <div class="projects__header">
+      <h2 class="section-title">Projetos</h2>
+      <p class="section-subtitle">
+        Conheça alguns dos projetos que desenvolvi, aplicando as melhores práticas de desenvolvimento.
+      </p>
     </div>
-    <button mat-button (click)="nextPage()">&#9654;</button>
+
+    <div class="projects__content">
+      <button 
+        class="projects__nav projects__nav--prev" 
+        (click)="previousPage()"
+        aria-label="Projetos anteriores"
+        [disabled]="currentPage === 0">
+        <i class="material-icons">chevron_left</i>
+      </button>
+
+      <div class="projects__grid">
+        <article 
+          class="project-card card" 
+          *ngFor="let item of visibleItems; let i = index"
+          (click)="openProject(item.codigo)"
+          [style.animation-delay]="(i * 0.1) + 's'"
+          tabindex="0"
+          role="button"
+          [attr.aria-label]="'Ver projeto: ' + item.title">
+          
+          <div class="project-card__image">
+            <img [src]="item.imageUrl" [alt]="item.title" loading="lazy">
+            <div class="project-card__overlay">
+              <span class="project-card__view">
+                <i class="material-icons">visibility</i>
+                Ver Detalhes
+              </span>
+            </div>
+          </div>
+
+          <div class="project-card__content">
+            <h3 class="project-card__title">{{ item.title }}</h3>
+            <div class="project-card__description" [innerHTML]="sanitize(item.description)"></div>
+          </div>
+        </article>
+      </div>
+
+      <button 
+        class="projects__nav projects__nav--next" 
+        (click)="nextPage()"
+        aria-label="Próximos projetos">
+        <i class="material-icons">chevron_right</i>
+      </button>
+    </div>
+
+    <div class="projects__pagination" *ngIf="totalPages > 1">
+      <button 
+        *ngFor="let page of [].constructor(totalPages); let i = index"
+        class="projects__dot"
+        [class.projects__dot--active]="i === currentPage"
+        (click)="goToPage(i)"
+        [attr.aria-label]="'Ir para página ' + (i + 1)">
+      </button>
+    </div>
   </div>
-</section>
+</div>

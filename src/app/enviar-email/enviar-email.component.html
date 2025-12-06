@@ -1,15 +1,58 @@
-<form #emailForm="ngForm" (ngSubmit)="sendEmail(emailForm)" class="email-form">
-  <div class="form-group">
-    <label for="toName">Seu Nome:</label>
-    <input type="text" id="toName" name="toName" ngModel class="form-control">
+<div class="contact-form">
+  <div class="contact-form__header">
+    <h3 class="contact-form__title">Entrar em Contato</h3>
+    <p class="contact-form__subtitle">Preencha o formulário abaixo e entrarei em contato em breve.</p>
   </div>
-  <div class="form-group">
-    <label for="toEmail">Seu Email:</label>
-    <input type="email" id="toEmail" name="toEmail" ngModel class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="toMessage">Mensagem:</label>
-    <textarea id="toMessage" name="toMessage" ngModel class="form-control"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Enviar E-mail</button>
-</form>
+
+  <form #emailForm="ngForm" (ngSubmit)="sendEmail(emailForm)" class="contact-form__form">
+    <div class="form-group">
+      <label for="toName" class="form-label">
+        <i class="material-icons">person</i>
+        Seu Nome
+      </label>
+      <input 
+        type="text" 
+        id="toName" 
+        name="toName" 
+        ngModel 
+        class="form-input"
+        placeholder="Digite seu nome"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="toEmail" class="form-label">
+        <i class="material-icons">email</i>
+        Seu Email
+      </label>
+      <input 
+        type="email" 
+        id="toEmail" 
+        name="toEmail" 
+        ngModel 
+        class="form-input"
+        placeholder="seu@email.com"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="toMessage" class="form-label">
+        <i class="material-icons">message</i>
+        Mensagem
+      </label>
+      <textarea 
+        id="toMessage" 
+        name="toMessage" 
+        ngModel 
+        class="form-input form-textarea"
+        placeholder="Escreva sua mensagem..."
+        rows="4"
+        required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary contact-form__submit">
+      <i class="material-icons">send</i>
+      Enviar Mensagem
+    </button>
+  </form>
+</div>

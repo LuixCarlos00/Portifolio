@@ -16,10 +16,6 @@ Para mim, cada desafio é uma oportunidade de aprendizado e crescimento. Gosto d
 Meu objetivo é continuar me desafiando, aprendendo e contribuindo para projetos que façam a diferença. Se há algo que me define, é a minha disposição incansável para enfrentar novos desafios e minha paixão por tudo o que envolve tecnologia.`
 };
 
-/**
- * Base technology images for the carousel
- * These are the unique images that will be repeated in the carousel animation
- */
 const BASE_CAROUSEL_IMAGES: CarouselImage[] = [
   { url: 'assets/imagens/git.png', alt: 'Git' },
   { url: 'assets/imagens/springBoot.png', alt: 'Spring Boot' },
@@ -32,10 +28,6 @@ const BASE_CAROUSEL_IMAGES: CarouselImage[] = [
   { url: 'assets/imagens/typeSrcip.png', alt: 'TypeScript' }
 ];
 
-/**
- * Generates carousel images by repeating the base images
- * @param repeatCount Number of times to repeat the base images
- */
 function generateCarouselImages(repeatCount: number = 2): CarouselImage[] {
   const result: CarouselImage[] = [];
   for (let i = 0; i < repeatCount; i++) {

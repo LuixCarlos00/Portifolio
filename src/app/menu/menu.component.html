@@ -1,13 +1,10 @@
-<!-- Header com navegação fixa -->
 <header class="header" [class.header--scrolled]="isScrolled">
   <div class="header__container">
-    <!-- Logo -->
     <a href="#" class="header__logo">
       <span class="header__logo-text">LC</span>
       <span class="header__logo-dot"></span>
     </a>
 
-    <!-- Navegação Desktop -->
     <nav class="header__nav" role="navigation" aria-label="Navegação principal">
       <ul class="header__nav-list">
         <li><a href="#experiencias" class="header__nav-link">Experiências</a></li>
@@ -17,14 +14,12 @@
       </ul>
     </nav>
 
-    <!-- CTA e Menu Mobile -->
     <div class="header__actions">
       <button class="btn btn-primary header__cta" (click)="openContactForm()">
         <i class="material-icons">mail_outline</i>
         <span>Contato</span>
       </button>
       
-      <!-- Botão Menu Mobile -->
       <button 
         class="header__menu-toggle" 
         (click)="toggleMobileMenu()"
@@ -36,7 +31,6 @@
     </div>
   </div>
 
-  <!-- Menu Mobile -->
   <div 
     id="mobile-menu" 
     class="header__mobile-menu" 
@@ -55,11 +49,8 @@
   </div>
 </header>
 
-<!-- Main Content -->
 <main id="main-content">
-  <!-- Hero Section -->
   <section class="hero">
-    <!-- Background Elements -->
     <div class="hero__bg">
       <div class="hero__gradient"></div>
       <div class="hero__grid"></div>
@@ -69,13 +60,11 @@
 
     <div class="hero__container">
       <div class="hero__content">
-        <!-- Tag -->
         <div class="hero__tag animate-fade-in-up" style="animation-delay: 0.1s">
           <span class="hero__tag-icon">👋</span>
           <span>Olá, eu sou</span>
         </div>
 
-        <!-- Nome e Título -->
         <h1 class="hero__title animate-fade-in-up" style="animation-delay: 0.2s">
           Luiz Carlos
         </h1>
@@ -83,14 +72,12 @@
           <span class="hero__subtitle-gradient">Full Stack Developer</span>
         </h2>
 
-        <!-- Descrição -->
         <p class="hero__description animate-fade-in-up" style="animation-delay: 0.4s">
           Transformo ideias em experiências digitais incríveis. 
           Especialista em <strong>Java</strong>, <strong>Spring Boot</strong>, 
           <strong>Angular</strong> e soluções escaláveis.
         </p>
 
-        <!-- CTAs -->
         <div class="hero__actions animate-fade-in-up" style="animation-delay: 0.5s">
           <a href="#projetos" class="btn btn-primary">
             <i class="material-icons">work_outline</i>
@@ -102,7 +89,6 @@
           </button>
         </div>
 
-        <!-- Social Links -->
         <div class="hero__social animate-fade-in-up" style="animation-delay: 0.6s">
           <a 
             href="https://github.com/luixcarlos00" 
@@ -131,10 +117,8 @@
         </div>
       </div>
 
-      <!-- Hero Visual -->
       <div class="hero__visual animate-fade-in-up" style="animation-delay: 0.4s">
         <div class="hero__visual-wrapper">
-          <!-- Tech Stack Floating -->
           <div class="hero__tech-stack">
             <div class="hero__tech-item hero__tech-item--1" title="Java">
               <img src="assets/imagens/java.png" alt="Java" loading="lazy">
@@ -150,7 +134,6 @@
             </div>
           </div>
 
-          <!-- Code Block Decorativo -->
           <div class="hero__code-block glass">
             <div class="hero__code-header">
               <span class="hero__code-dot hero__code-dot--red"></span>
@@ -164,11 +147,10 @@
 &#125;;</code></pre>
           </div>
 
-          <!-- Easter Egg - Snake Game -->
           <button 
             class="hero__easter-egg" 
             (click)="openSnakeGame()"
-            title="Jogar Snake 🐍"
+            title="Jogar Snake "
             aria-label="Abrir jogo Snake">
             <i class="fa fa-gamepad"></i>
           </button>
@@ -176,7 +158,6 @@
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
     <div class="hero__scroll">
       <span class="hero__scroll-text">Scroll para explorar</span>
       <div class="hero__scroll-indicator">
@@ -185,7 +166,6 @@
     </div>
   </section>
 
-  <!-- Seções do Portfólio -->
   <section id="experiencias" class="section section--alt">
     <app-Experiencias></app-Experiencias>
   </section>
@@ -202,7 +182,6 @@
     <app-sobre></app-sobre>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer__container">
       <div class="footer__content">

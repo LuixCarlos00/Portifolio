@@ -75,6 +75,17 @@ export class ProjetosComponent implements OnInit {
     );
   }
 
+  get totalPages(): number {
+    return Math.ceil(this.portfolioItems.length / this.itemsPerPage);
+  }
+
+  goToPage(page: number): void {
+    if (page >= 0 && page < this.totalPages) {
+      this.currentPage = page;
+      this.updateVisibleItems();
+    }
+  }
+
   openProject(codigo: number) {
     const dialogRef = this.dialog.open(ExemplosPortifolioComponent, {
       data: { codigo: codigo },

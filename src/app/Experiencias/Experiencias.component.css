@@ -1,98 +1,136 @@
-.section_container {
-  height: auto;
-  margin: 0;
+/* ========================================
+   EXPERIENCIAS COMPONENT
+   ======================================== */
+
+.experience {
+  width: 100%;
+}
+
+.experience__header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+/* Timeline */
+.experience__timeline {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience__item {
+  display: flex;
+  gap: var(--space-6);
+}
+
+/* Timeline Marker */
+.experience__marker {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  flex-shrink: 0;
 }
 
-.title {
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 10px;
-  text-align: center;
+.experience__dot {
+  width: 16px;
+  height: 16px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-glow);
 }
 
-.content_container {
-  margin-top: 2rem;
+.experience__line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(to bottom, var(--primary), transparent);
+  margin-top: var(--space-2);
+}
+
+/* Experience Content */
+.experience__content {
+  flex: 1;
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.experience__header-info {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.experience__role {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.experience__company {
+  display: flex;
   align-items: center;
-  width: 90%;
+  gap: var(--space-2);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
 }
 
-.info {
-  padding: 1rem;
-  width: 100%;
-  margin: 10px auto;
-  color: white;
+.experience__company i {
+  font-size: 16px;
+  color: var(--primary);
 }
 
-.infoDescription {
-  width: 100%;
-  color: white;
-
+.experience__period {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
 }
 
-.experience_header {
-  margin-top: 1rem;
+.experience__period i {
+  font-size: 14px;
 }
 
-.job-title {
-  color: #f1c50e;
-  font-size: 1.2rem;
+.experience__description {
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-5);
 }
 
-
-.contact-button {
-  background-color: #f1c50e;
-  color: white;
-  padding: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 2rem;
-  width: 200px;
-  font-size: 1rem;
-  font-weight: bold;
+.experience__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
 }
 
-.contact-button:hover {
-  background-color: #e0b609;
+/* CTA Section */
+.experience__cta {
+  text-align: center;
+  margin-top: var(--space-12);
+  padding: var(--space-8);
+  background: var(--gradient-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.contact_button_container{
- margin-left : 50px;
+.experience__cta-text {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
 }
 
-@media screen and (max-width: 768px) {
-  .title {
-    font-size: 1.5rem;
+/* Responsive */
+@media (max-width: 768px) {
+  .experience__marker {
+    display: none;
   }
-
-
-  .info {
-    color: white;
-    padding: 1rem;
+  
+  .experience__header-info {
+    flex-direction: column;
   }
-
-  .infoDescription {
-     width: 100%;
-     color: white;
-
+  
+  .experience__period {
+    align-self: flex-start;
   }
-
-  .job-title {
-    font-size: 1rem;
-  }
-
-  .contact-button {
-    width: 100%;
-  }
-
-  .contact_button_container{
-    margin-left : 0px;
-   }
 }
