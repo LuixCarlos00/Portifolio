@@ -1,196 +1,49 @@
-export const Esperiencia: any = {
-  description: `Durante minha experiência na Unifor MG, desenvolvi sistemas internos para auxiliar professores e
-            funcionários da universidade. Refazer e modernizar esses sistemas me permitiu contribuir significativamente
-            para o desenvolvimento web, otimizando a gestão de informações e processos, o que facilitou as atividades
-            diárias e melhorou a eficiência operacional.
+import { CarouselImage, ContentSection } from '../core/models';
 
-            Trabalhando de perto com os usuários finais, assegurei que as soluções fossem práticas e intuitivas. As
-            interfaces interativas e responsivas, junto com serviços robustos e seguros, garantiram uma experiência de
-            uso eficiente e a integridade dos dados. Essa experiência permitiu-me contribuir significativamente para o
-            ambiente educacional da Unifor MG, transformando processos internos através da tecnologia.
-            `,
+export const Experiencia: ContentSection = {
+  description: `Durante minha experiência na Unifor MG, desenvolvi sistemas internos para auxiliar professores e funcionários da universidade. Refazer e modernizar esses sistemas me permitiu contribuir significativamente para o desenvolvimento web, otimizando a gestão de informações e processos, o que facilitou as atividades diárias e melhorou a eficiência operacional.
+
+Trabalhando de perto com os usuários finais, assegurei que as soluções fossem práticas e intuitivas. As interfaces interativas e responsivas, junto com serviços robustos e seguros, garantiram uma experiência de uso eficiente e a integridade dos dados. Essa experiência permitiu-me contribuir significativamente para o ambiente educacional da Unifor MG, transformando processos internos através da tecnologia.`
 };
 
-export const sobre: any = {
-  description: `Sou um programador nascido em 2001, apaixonado por tecnologia e jogos. Minha jornada no mundo da computação
-          começou quando ingressei no curso de Ciência da Computação na UNIFOR-MG em 2019. Desde então, minha
-          curiosidade e entusiasmo por aprender coisas novas só têm crescido.
+export const Sobre: ContentSection = {
+  description: `Sou um programador nascido em 2001, apaixonado por tecnologia e jogos. Minha jornada no mundo da computação começou quando ingressei no curso de Ciência da Computação na UNIFOR-MG em 2019. Desde então, minha curiosidade e entusiasmo por aprender coisas novas só têm crescido.
 
-           Durante a faculdade, mergulhei fundo nos estudos e em diversos projetos que me permitiram explorar diferentes
-          áreas da tecnologia. Desenvolver software, entender os meandros dos algoritmos e criar soluções inovadoras se
-          tornaram mais do que uma carreira, mas uma verdadeira paixão.
+Durante a faculdade, mergulhei fundo nos estudos e em diversos projetos que me permitiram explorar diferentes áreas da tecnologia. Desenvolver software, entender os meandros dos algoritmos e criar soluções inovadoras se tornaram mais do que uma carreira, mas uma verdadeira paixão.
 
-          Para mim, cada desafio é uma oportunidade de aprendizado e crescimento. Gosto de me testar e de resolver
-          problemas complexos, e nada me deixa mais satisfeito do que encontrar a solução para um bug teimoso ou ver um
-          projeto finalmente ganhar vida.
+Para mim, cada desafio é uma oportunidade de aprendizado e crescimento. Gosto de me testar e de resolver problemas complexos, e nada me deixa mais satisfeito do que encontrar a solução para um bug teimoso ou ver um projeto finalmente ganhar vida.
 
-           Meu objetivo é continuar me desafiando, aprendendo e contribuindo para projetos que façam a diferença. Se há
-          algo que me define, é a minha disposição incansável para enfrentar novos desafios e minha paixão por tudo o
-          que envolve tecnologia.`,
+Meu objetivo é continuar me desafiando, aprendendo e contribuindo para projetos que façam a diferença. Se há algo que me define, é a minha disposição incansável para enfrentar novos desafios e minha paixão por tudo o que envolve tecnologia.`
 };
 
-export const Imagens: any = {
-  pages: [
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
+/**
+ * Base technology images for the carousel
+ * These are the unique images that will be repeated in the carousel animation
+ */
+const BASE_CAROUSEL_IMAGES: CarouselImage[] = [
+  { url: 'assets/imagens/git.png', alt: 'Git' },
+  { url: 'assets/imagens/springBoot.png', alt: 'Spring Boot' },
+  { url: 'assets/imagens/angular.png', alt: 'Angular' },
+  { url: 'assets/imagens/java.png', alt: 'Java' },
+  { url: 'assets/imagens/json.png', alt: 'JSON' },
+  { url: 'assets/imagens/junit.png', alt: 'JUnit' },
+  { url: 'assets/imagens/mysql.png', alt: 'MySQL' },
+  { url: 'assets/imagens/sqlserve.png', alt: 'SQL Server' },
+  { url: 'assets/imagens/typeSrcip.png', alt: 'TypeScript' }
+];
 
+/**
+ * Generates carousel images by repeating the base images
+ * @param repeatCount Number of times to repeat the base images
+ */
+function generateCarouselImages(repeatCount: number = 2): CarouselImage[] {
+  const result: CarouselImage[] = [];
+  for (let i = 0; i < repeatCount; i++) {
+    result.push(...BASE_CAROUSEL_IMAGES);
+  }
+  return result;
+}
 
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-    { url: ' ../../assets/imagens/git.png' },
-    { url: ' ../../assets/imagens/springBoot.png' },
-    { url: ' ../../assets/imagens/angular.png' },
-    { url: ' ../../assets/imagens/java.png' },
-    { url: ' ../../assets/imagens/json.png' },
-    { url: ' ../../assets/imagens/junit.png' },
-    { url: ' ../../assets/imagens/mysql.png' },
-    { url: ' ../../assets/imagens/sqlserve.png' },
-    { url: ' ../../assets/imagens/typeSrcip.png' },
-
-  ],
+export const CarouselImages = {
+  pages: generateCarouselImages(2)
 };

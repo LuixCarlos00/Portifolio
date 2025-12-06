@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { sobre } from '../Opcoes/Info';
+import { Sobre } from '../Opcoes/Info';
 
 @Component({
   selector: 'app-sobre',
@@ -7,10 +7,9 @@ import { sobre } from '../Opcoes/Info';
   styleUrls: ['./sobre.component.css']
 })
 export class SobreComponent implements OnInit {
-  sobre = sobre;
-  constructor() { }
+  readonly sobre = Sobre;
 
-  ngOnInit() {
-  }
+  constructor() {}
 
+  ngOnInit(): void {}
 }

@@ -1,10 +1,10 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-  import { ExemplosPortifolioComponent } from '../Exemplos-Portifolio/Exemplos-Portifolio.component';
-import { PortfolioItem, Portifolio } from '../Opcoes/Portifolio';
+import { ExemplosPortifolioComponent } from '../Exemplos-Portifolio/Exemplos-Portifolio.component';
+import { Portifolio } from '../Opcoes/Portifolio';
 import { SanitizerService } from '../service/sanitizer.service';
+import { PortfolioItem } from '../core/models';
 
 @Component({
   selector: 'app-Projetos',
@@ -20,8 +20,7 @@ export class ProjetosComponent implements OnInit {
   safeHtmlDescriptions: SafeHtml[] = [];
 
   constructor(
-    public dialog: MatDialog,
-    public router: Router,
+    private dialog: MatDialog,
     private sanitizer: DomSanitizer,
     private sanitizerService: SanitizerService
   ) {

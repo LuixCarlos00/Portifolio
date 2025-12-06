@@ -1,18 +1,6 @@
-import { SafeHtml } from '@angular/platform-browser';
+import { PortfolioExample } from '../core/models';
 
-interface ExemplosPortifolio {
-  codigo: number;
-  title: string;
-  description: SafeHtml; // Alterado para SafeHtml
-  imageUrl: {
-    url: string;
-  }[];
-  videoUrl: {
-    url: string;
-  }[];
-}
-
-export const ExemplosPortifolio: ExemplosPortifolio[] = [
+export const ExemplosPortifolio: PortfolioExample[] = [
   {
     codigo: 1,
     title: 'Software de Gestão de Automóveis',
@@ -20,31 +8,31 @@ export const ExemplosPortifolio: ExemplosPortifolio[] = [
       real dos veículos, controle de manutenção, e geração de relatórios detalhados sobre a utilização
       dos automóveis. A interface foi construída utilizando Java Swing e o MySQL.`,
     imageUrl: [
-      { url: '../../assets/imagens/softwareGestaoVeiculos/login.png' },
-      { url: '../../assets/imagens/softwareGestaoVeiculos/criarLogin.png' },
-      { url: '../../assets/imagens/softwareGestaoVeiculos/home.png' },
-      { url: '../../assets/imagens/softwareGestaoVeiculos/cadastro.png' },
+      { url: 'assets/imagens/softwareGestaoVeiculos/login.png' },
+      { url: 'assets/imagens/softwareGestaoVeiculos/criarLogin.png' },
+      { url: 'assets/imagens/softwareGestaoVeiculos/home.png' },
+      { url: 'assets/imagens/softwareGestaoVeiculos/cadastro.png' },
       {
-        url: '../../assets/imagens/softwareGestaoVeiculos/cadstroFuncionario.png',
+        url: 'assets/imagens/softwareGestaoVeiculos/cadstroFuncionario.png',
       },
       {
-        url: '../../assets/imagens/softwareGestaoVeiculos/cadastroVeiculo.png',
+        url: 'assets/imagens/softwareGestaoVeiculos/cadastroVeiculo.png',
       },
       {
-        url: '../../assets/imagens/softwareGestaoVeiculos/cadastroEmpresa.png',
+        url: 'assets/imagens/softwareGestaoVeiculos/cadastroEmpresa.png',
       },
-      { url: '../../assets/imagens/softwareGestaoVeiculos/movimentacao.png' },
+      { url: 'assets/imagens/softwareGestaoVeiculos/movimentacao.png' },
       {
-        url: '../../assets/imagens/softwareGestaoVeiculos/movimentacaoDeVeiculos.png',
-      },
-      {
-        url: '../../assets/imagens/softwareGestaoVeiculos/controleDeGasto.png',
+        url: 'assets/imagens/softwareGestaoVeiculos/movimentacaoDeVeiculos.png',
       },
       {
-        url: '../../assets/imagens/softwareGestaoVeiculos/requisisaoDeCompra.png',
+        url: 'assets/imagens/softwareGestaoVeiculos/controleDeGasto.png',
       },
-      { url: '../../assets/imagens/softwareGestaoVeiculos/outros.png' },
-      { url: '../../assets/imagens/softwareGestaoVeiculos/sobre.png' },
+      {
+        url: 'assets/imagens/softwareGestaoVeiculos/requisisaoDeCompra.png',
+      },
+      { url: 'assets/imagens/softwareGestaoVeiculos/outros.png' },
+      { url: 'assets/imagens/softwareGestaoVeiculos/sobre.png' },
     ],
     videoUrl: [],
   },
@@ -57,21 +45,21 @@ export const ExemplosPortifolio: ExemplosPortifolio[] = [
       foi projetada para facilitar o processo de tomada de decisões, oferecendo relatórios analíticos e
       dashboards personalizados.`,
     imageUrl: [
-      { url: '../../assets/imagens/SoftwareDeClinica/login.png' },
-      { url: '../../assets/imagens/SoftwareDeClinica/home.png' },
-      { url: '../../assets/imagens/SoftwareDeClinica/barraLatera.png' },
+      { url: 'assets/imagens/SoftwareDeClinica/login.png' },
+      { url: 'assets/imagens/SoftwareDeClinica/home.png' },
+      { url: 'assets/imagens/SoftwareDeClinica/barraLatera.png' },
     ],
     videoUrl: [
       {
-        url: '../../assets/imagens/SoftwareDeClinica/SaudeConecta.Gerenciamento.mp4',
+        url: 'assets/imagens/SoftwareDeClinica/SaudeConecta.Gerenciamento.mp4',
       },
       {
-        url: '../../assets/imagens/SoftwareDeClinica/SaudeConecta.HistoricoDeProntuario.mp4',
+        url: 'assets/imagens/SoftwareDeClinica/SaudeConecta.HistoricoDeProntuario.mp4',
       },
       {
-        url: '../../assets/imagens/SoftwareDeClinica/SaudeConect.TrocaSenha.mp4',
+        url: 'assets/imagens/SoftwareDeClinica/SaudeConect.TrocaSenha.mp4',
       },
-      { url: '../../assets/imagens/SoftwareDeClinica/responsividade.mp4' },
+      { url: 'assets/imagens/SoftwareDeClinica/responsividade.mp4' },
     ],
   },
 
@@ -94,10 +82,10 @@ export const ExemplosPortifolio: ExemplosPortifolio[] = [
        contextuais com base nas entradas do usuário. O chatbot pode ser configurado para dar respostas sarcásticas ou em um estilo específico, dependendo da personalização.
      `,
     imageUrl: [
-      { url: '../../assets/imagens/chatBoot/chatBot1.png' },
-      { url: '../../assets/imagens/chatBoot/chatBot2.png' },
-      { url: '../../assets/imagens/chatBoot/chatBot3.png' },
-      { url: '../../assets/imagens/chatBoot/chatBot4.png' },
+      { url: 'assets/imagens/chatBoot/chatBot1.png' },
+      { url: 'assets/imagens/chatBoot/chatBot2.png' },
+      { url: 'assets/imagens/chatBoot/chatBot3.png' },
+      { url: 'assets/imagens/chatBoot/chatBot4.png' },
     ],
     videoUrl: [],
   },
@@ -166,12 +154,12 @@ export const ExemplosPortifolio: ExemplosPortifolio[] = [
      `,
     imageUrl: [
       {
-        url: '../../assets/imagens/Analizador-De-Video-Youtube/analizadorVideo.png',
+        url: 'assets/imagens/Analizador-De-Video-Youtube/analizadorVideo.png',
       },
     ],
     videoUrl: [
       {
-        url: '../../assets/imagens/Analizador-De-Video-Youtube/Analizador-De-Video-Youtube ‐ Feito com o Clipchamp.mp4',
+        url: 'assets/imagens/Analizador-De-Video-Youtube/Analizador-De-Video-Youtube ‐ Feito com o Clipchamp.mp4',
       },
     ],
   },

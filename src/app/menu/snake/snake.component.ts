@@ -1,36 +1,46 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import swal from 'sweetalert';
+import { Position } from '../../core/models';
 
 @Component({
   selector: 'app-snake',
   templateUrl: './snake.component.html',
   styleUrls: ['./snake.component.css']
 })
-export class SnakeComponent {
+export class SnakeComponent implements OnInit, OnDestroy {
+  private static readonly CELL_SIZE = 20;
+  private static readonly BOARD_SIZE = 240;
+  private static readonly GAME_SPEED_MS = 350;
+  private static readonly INITIAL_POSITION: Position = { x: 100, y: 100 };
+
+  private readonly keydownHandler = this.changeDirection.bind(this);
+  private gameInterval: ReturnType<typeof setInterval> | null = null;
+
   @ViewChild('gameBoard') gameBoard!: ElementRef<HTMLDivElement>;
-  snake: { x: number, y: number }[] = [];
-  food: { x: number, y: number } = { x: 0, y: 0 };
-  direction: { x: number, y: number } = { x: 20, y: 0 };
-  gameInterval: any;
-  score: number = 0;
-  readonly cellSize = 20; // Tamanho da célula
-  readonly boardSize = 240; // Tamanho do tabuleiro
 
-  constructor() { }
+  snake: Position[] = [];
+  food: Position = { x: 0, y: 0 };
+  direction: Position = { x: SnakeComponent.CELL_SIZE, y: 0 };
+  score = 0;
 
-  ngOnInit() {
+  readonly cellSize = SnakeComponent.CELL_SIZE;
+  readonly boardSize = SnakeComponent.BOARD_SIZE;
+
+  constructor() {}
+
+  ngOnInit(): void {
     this.resetGame();
   }
 
-  resetGame() {
-    this.snake = [{ x: 100, y: 100 }];
-    this.direction = { x: this.cellSize, y: 0 };
+  private resetGame(): void {
+    this.snake = [{ ...SnakeComponent.INITIAL_POSITION }];
+    this.direction = { x: SnakeComponent.CELL_SIZE, y: 0 };
     this.score = 0;
     this.placeFood();
   }
 
-  placeFood() {
-    let newFoodPosition: { x: number, y: number };
+  private placeFood(): void {
+    let newFoodPosition: Position;
     do {
       newFoodPosition = {
         x: Math.floor(Math.random() * (this.boardSize / this.cellSize)) * this.cellSize,
@@ -40,19 +50,21 @@ export class SnakeComponent {
     this.food = newFoodPosition;
   }
 
-  isCollision(position: { x: number, y: number }): boolean {
+  private isCollision(position: Position): boolean {
     if (position.x < 0 || position.y < 0 || position.x >= this.boardSize || position.y >= this.boardSize) {
       return true;
     }
     return this.snake.some(segment => segment.x === position.x && segment.y === position.y);
   }
 
-  updateGame() {
+  private updateGame(): void {
     const head = { x: this.snake[0].x + this.direction.x, y: this.snake[0].y + this.direction.y };
 
     if (this.isCollision(head)) {
-      clearInterval(this.gameInterval);
-      this.gameInterval = null;
+      if (this.gameInterval) {
+        clearInterval(this.gameInterval);
+        this.gameInterval = null;
+      }
       swal({
         title: "Game Over!",
         text: "Tente Novamente",
@@ -71,17 +83,37 @@ export class SnakeComponent {
     }
   }
 
-  startGame() {
+  startGame(): void {
     if (this.gameInterval) {
-      return;  // Se já houver um jogo em andamento, não faz nada
+      return;
     }
     this.resetGame();
     this.gameInterval = setInterval(() => this.updateGame(), 350);
-    window.addEventListener('keydown', this.changeDirection.bind(this));
+    window.addEventListener('keydown', this.keydownHandler);
   }
 
-  changeDirection(event: { key: string }) {
-    switch (event.key) {
+  ngOnDestroy(): void {
+    this.cleanup();
+  }
+
+  private cleanup(): void {
+    if (this.gameInterval) {
+      clearInterval(this.gameInterval);
+      this.gameInterval = null;
+    }
+    window.removeEventListener('keydown', this.keydownHandler);
+  }
+
+  handleDirectionClick(direction: string): void {
+    this.setDirection(direction);
+  }
+
+  changeDirection(event: KeyboardEvent): void {
+    this.setDirection(event.key);
+  }
+
+  private setDirection(key: string): void {
+    switch (key) {
       case 'ArrowUp':
         if (this.direction.y === 0) {
           this.direction = { x: 0, y: -this.cellSize };

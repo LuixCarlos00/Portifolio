@@ -1,27 +1,125 @@
-# Portifolio
+# Portfólio - Luiz Carlos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+Portfólio pessoal desenvolvido em Angular, exibindo experiências profissionais, projetos, certificados e informações de contato.
 
-## Development server
+## Descrição
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Este projeto é um portfólio interativo que apresenta:
+- **Experiências profissionais** - Histórico de trabalho e contribuições
+- **Projetos** - Showcase de projetos desenvolvidos com detalhes e screenshots
+- **Certificados** - Galeria de certificações obtidas
+- **Sobre** - Informações pessoais e especialidades
+- **Contato** - Formulário de contato via EmailJS
+- **Easter Egg** - Jogo Snake integrado
 
-## Code scaffolding
+## Tecnologias
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+| Categoria | Tecnologia | Versão |
+|-----------|------------|--------|
+| Framework | Angular | 17.3.0 |
+| UI Library | Angular Material | 17.3.10 |
+| Icons | FontAwesome | 6.6.0 |
+| Email | EmailJS | 3.2.0 |
+| Sanitização | DOMPurify | 3.1.7 |
+| Linguagem | TypeScript | 5.4.2 |
 
-## Build
+## Estrutura do Projeto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+src/
+├── app/
+│   ├── core/
+│   │   └── models/           # Interfaces e tipos centralizados
+│   ├── CertificadoModal/     # Modal de certificados
+│   ├── Exemplos-Portifolio/  # Modal de exemplos de projetos
+│   ├── Experiencias/         # Seção de experiências
+│   ├── Opcoes/               # Dados estáticos (constantes)
+│   ├── Projetos/             # Seção de projetos
+│   ├── certificados/         # Seção de certificados
+│   ├── enviar-email/         # Formulário de contato
+│   ├── menu/                 # Componente principal
+│   │   └── snake/            # Jogo Snake
+│   ├── service/              # Serviços (sanitização)
+│   └── sobre/                # Seção sobre
+├── assets/                   # Imagens e recursos
+└── environments/             # Configurações de ambiente
+```
 
-## Running unit tests
+## Instalação
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+# Clonar o repositório
+git clone https://github.com/luixcarlos00/Portifolio.git
 
-## Running end-to-end tests
+# Instalar dependências
+npm install
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Configurar variáveis de ambiente
+cp .env.example .env
+# Editar .env com suas credenciais do EmailJS
+```
 
-## Further help
+## Configuração do EmailJS
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Crie uma conta em [EmailJS](https://www.emailjs.com/)
+2. Configure um serviço de email
+3. Crie um template de email
+4. Atualize `src/environments/environment.ts`:
+
+```typescript
+export const environment = {
+  production: false,
+  emailjs: {
+    publicKey: 'SUA_PUBLIC_KEY',
+    serviceId: 'SEU_SERVICE_ID',
+    templateId: 'SEU_TEMPLATE_ID'
+  }
+};
+```
+
+## Desenvolvimento
+
+```bash
+# Servidor de desenvolvimento
+npm start
+# Navegue para http://localhost:4200/
+
+# Build de produção
+npm run build
+
+# Executar testes
+npm test
+```
+
+## Scripts Disponíveis
+
+| Comando | Descrição |
+|---------|-----------|
+| `npm start` | Inicia servidor de desenvolvimento |
+| `npm run build` | Build de produção |
+| `npm test` | Executa testes unitários |
+| `npm run watch` | Build com watch mode |
+
+## Arquitetura
+
+O projeto segue os princípios:
+- **Single Responsibility Principle** - Cada componente tem uma responsabilidade clara
+- **Tipagem forte** - Interfaces centralizadas em `core/models`
+- **Separação de dados** - Constantes isoladas em `Opcoes/`
+- **Sanitização** - DOMPurify para prevenir XSS
+
+## Segurança
+
+- Credenciais do EmailJS configuradas via variáveis de ambiente
+- Sanitização de HTML com DOMPurify
+- Inputs validados no formulário de contato
+
+## Licença
+
+Este projeto é privado e de uso pessoal.
+
+## Autor
+
+**Luiz Carlos**
+- GitHub: [@luixcarlos00](https://github.com/luixcarlos00)
+- LinkedIn: [luixcarlos00](https://www.linkedin.com/in/luixcarlos00)

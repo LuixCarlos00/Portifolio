@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CertificadoModalComponent } from '../CertificadoModal/CertificadoModal.component';
 import { Certificados } from '../Opcoes/Certificados';
+import { Certificate } from '../core/models';
 
 @Component({
   selector: 'app-certificados',
@@ -9,19 +10,16 @@ import { Certificados } from '../Opcoes/Certificados';
   styleUrls: ['./certificados.component.css']
 })
 export class CertificadosComponent implements OnInit {
+  readonly cards = Certificados;
 
-  cards = Certificados;
+  constructor(private dialog: MatDialog) {}
 
-  constructor(public dialog: MatDialog, ) { }
+  ngOnInit(): void {}
 
-  ngOnInit() {
-  }
-
-
-  openCertificate(card: any): void {
+  openCertificate(card: Certificate): void {
     this.dialog.open(CertificadoModalComponent, {
-      data: { certificateImage: card.Certificado },
-      panelClass: 'custom-modal-container', // Classe CSS personalizada para o modal
+      data: { certificateImage: card.certificateImage },
+      panelClass: 'custom-modal-container'
     });
   }
 }

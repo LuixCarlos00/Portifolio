@@ -15,12 +15,12 @@
 
 
     <div class="control-button-row">
-      <button class="control-button" (click)="changeDirection({ key: 'ArrowUp' })">⬆️</button>
-      <button class="control-button" (click)="changeDirection({ key: 'ArrowDown' })">⬇️</button>
+      <button class="control-button" (click)="handleDirectionClick('ArrowUp')">⬆️</button>
+      <button class="control-button" (click)="handleDirectionClick('ArrowDown')">⬇️</button>
     </div>
 
-    <button class="control-button" (click)="changeDirection({ key: 'ArrowLeft' })">⬅️</button>
-    <button class="control-button" (click)="changeDirection({ key: 'ArrowRight' })">➡️</button>
+    <button class="control-button" (click)="handleDirectionClick('ArrowLeft')">⬅️</button>
+    <button class="control-button" (click)="handleDirectionClick('ArrowRight')">➡️</button>
 
   </div>
 </body>

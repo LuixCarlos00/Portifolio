@@ -1,12 +1,9 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SnakeComponent } from './snake/snake.component';
-import { Router } from '@angular/router';
-  import { ExemplosPortifolioComponent } from '../Exemplos-Portifolio/Exemplos-Portifolio.component';
-import {   Imagens } from '../Opcoes/Info';
-import { DomSanitizer  } from '@angular/platform-browser';
+import { ExemplosPortifolioComponent } from '../Exemplos-Portifolio/Exemplos-Portifolio.component';
+import { CarouselImages } from '../Opcoes/Info';
 import { EnviarEmailComponent } from '../enviar-email/enviar-email.component';
-import { SanitizerService } from '../service/sanitizer.service';
 
 
 @Component({
@@ -14,58 +11,40 @@ import { SanitizerService } from '../service/sanitizer.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css'],
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent {
+  private static readonly CV_PATH = 'assets/imagens/Luiz_Carlos-Cv.pdf';
+  private static readonly CV_FILENAME = 'luiz-carlos-cv.pdf';
 
+  readonly carouselImages = CarouselImages;
 
+  constructor(private dialog: MatDialog) {}
 
-   IMAGENS = Imagens;
-
-  constructor(public dialog: MatDialog, public router: Router,private sanitizer: DomSanitizer,
-    private sanitizerService: SanitizerService
-
-  ) {
-
-  }
-
-
-  ngOnInit(): void {
-   }
-
-
-  iniciarJogo() {
-    const dialogRef = this.dialog.open(SnakeComponent, {
+  openSnakeGame(): void {
+    this.dialog.open(SnakeComponent, {
       width: '300px',
-      height: '400px',
+      height: '400px'
     });
   }
 
-  download() {
+  downloadCurriculum(): void {
     const link = document.createElement('a');
-    link.href = '../../assets/imagens/Luiz_Carlos-Cv.pdf';
-    link.download = 'luiz-carlos-cv.pdf';
+    link.href = MenuComponent.CV_PATH;
+    link.download = MenuComponent.CV_FILENAME;
     link.click();
   }
 
-
-
-
-
-  openProject(codigo: number) {
-    const dialogRef = this.dialog.open(ExemplosPortifolioComponent, {
-      data: { codigo: codigo },
+  openProject(projectCode: number): void {
+    this.dialog.open(ExemplosPortifolioComponent, {
+      data: { codigo: projectCode },
       width: '80%',
-      height: '80%',
+      height: '80%'
     });
   }
 
-  sanitize(html: string): string {
-    return this.sanitizerService.sanitize(html);
-  }
-
-  contato() {
-    const dialogRef = this.dialog.open(EnviarEmailComponent, {
+  openContactForm(): void {
+    this.dialog.open(EnviarEmailComponent, {
       width: '300px',
-      height: '400px',
+      height: '400px'
     });
   }
 }

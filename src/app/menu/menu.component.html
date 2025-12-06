@@ -1,66 +1,232 @@
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#Experiencias">Experiências</a></li>
-        <li><a href="#Projetos">Projetos</a></li>
-        <li><a href="#Certificados">Certificados</a></li>
-        <li><a href="#Sobre">Sobre</a></li>
-        <li><a style="cursor: pointer" (click)="contato()">Contato</a></li>
+<!-- Header com navegação fixa -->
+<header class="header" [class.header--scrolled]="isScrolled">
+  <div class="header__container">
+    <!-- Logo -->
+    <a href="#" class="header__logo">
+      <span class="header__logo-text">LC</span>
+      <span class="header__logo-dot"></span>
+    </a>
+
+    <!-- Navegação Desktop -->
+    <nav class="header__nav" role="navigation" aria-label="Navegação principal">
+      <ul class="header__nav-list">
+        <li><a href="#experiencias" class="header__nav-link">Experiências</a></li>
+        <li><a href="#projetos" class="header__nav-link">Projetos</a></li>
+        <li><a href="#certificados" class="header__nav-link">Certificados</a></li>
+        <li><a href="#sobre" class="header__nav-link">Sobre</a></li>
       </ul>
     </nav>
-  </header>
 
-  <div class="container">
+    <!-- CTA e Menu Mobile -->
+    <div class="header__actions">
+      <button class="btn btn-primary header__cta" (click)="openContactForm()">
+        <i class="material-icons">mail_outline</i>
+        <span>Contato</span>
+      </button>
+      
+      <!-- Botão Menu Mobile -->
+      <button 
+        class="header__menu-toggle" 
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="isMobileMenuOpen"
+        aria-controls="mobile-menu"
+        aria-label="Abrir menu">
+        <span class="header__menu-icon" [class.header__menu-icon--open]="isMobileMenuOpen"></span>
+      </button>
+    </div>
+  </div>
 
+  <!-- Menu Mobile -->
+  <div 
+    id="mobile-menu" 
+    class="header__mobile-menu" 
+    [class.header__mobile-menu--open]="isMobileMenuOpen"
+    role="navigation"
+    aria-label="Menu mobile">
+    <nav class="header__mobile-nav">
+      <a href="#experiencias" class="header__mobile-link" (click)="closeMobileMenu()">Experiências</a>
+      <a href="#projetos" class="header__mobile-link" (click)="closeMobileMenu()">Projetos</a>
+      <a href="#certificados" class="header__mobile-link" (click)="closeMobileMenu()">Certificados</a>
+      <a href="#sobre" class="header__mobile-link" (click)="closeMobileMenu()">Sobre</a>
+      <button class="btn btn-primary header__mobile-cta" (click)="openContactForm(); closeMobileMenu()">
+        Entrar em Contato
+      </button>
+    </nav>
+  </div>
+</header>
 
-    <div class="head">
-      <div class="carousel">
-        <div class="carousel-images">
-          <ng-container *ngFor="let imagem of IMAGENS.pages">
-            <img [src]="imagem.url" alt="Imagem">
-          </ng-container>
-          <ng-container *ngFor="let imagem of IMAGENS.pages">
-            <img [src]="imagem.url" alt="Imagem">
-          </ng-container>
+<!-- Main Content -->
+<main id="main-content">
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Background Elements -->
+    <div class="hero__bg">
+      <div class="hero__gradient"></div>
+      <div class="hero__grid"></div>
+      <div class="hero__glow hero__glow--1"></div>
+      <div class="hero__glow hero__glow--2"></div>
+    </div>
+
+    <div class="hero__container">
+      <div class="hero__content">
+        <!-- Tag -->
+        <div class="hero__tag animate-fade-in-up" style="animation-delay: 0.1s">
+          <span class="hero__tag-icon">👋</span>
+          <span>Olá, eu sou</span>
+        </div>
+
+        <!-- Nome e Título -->
+        <h1 class="hero__title animate-fade-in-up" style="animation-delay: 0.2s">
+          Luiz Carlos
+        </h1>
+        <h2 class="hero__subtitle animate-fade-in-up" style="animation-delay: 0.3s">
+          <span class="hero__subtitle-gradient">Full Stack Developer</span>
+        </h2>
+
+        <!-- Descrição -->
+        <p class="hero__description animate-fade-in-up" style="animation-delay: 0.4s">
+          Transformo ideias em experiências digitais incríveis. 
+          Especialista em <strong>Java</strong>, <strong>Spring Boot</strong>, 
+          <strong>Angular</strong> e soluções escaláveis.
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero__actions animate-fade-in-up" style="animation-delay: 0.5s">
+          <a href="#projetos" class="btn btn-primary">
+            <i class="material-icons">work_outline</i>
+            Ver Projetos
+          </a>
+          <button class="btn btn-secondary" (click)="downloadCurriculum()">
+            <i class="material-icons">download</i>
+            Download CV
+          </button>
+        </div>
+
+        <!-- Social Links -->
+        <div class="hero__social animate-fade-in-up" style="animation-delay: 0.6s">
+          <a 
+            href="https://github.com/luixcarlos00" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="hero__social-link"
+            aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/luixcarlos00" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="hero__social-link"
+            aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a 
+            href="https://www.hackerrank.com/profile/luixcarlos00" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="hero__social-link"
+            aria-label="HackerRank">
+            <i class="fa-brands fa-hackerrank"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="hero__visual animate-fade-in-up" style="animation-delay: 0.4s">
+        <div class="hero__visual-wrapper">
+          <!-- Tech Stack Floating -->
+          <div class="hero__tech-stack">
+            <div class="hero__tech-item hero__tech-item--1" title="Java">
+              <img src="assets/imagens/java.png" alt="Java" loading="lazy">
+            </div>
+            <div class="hero__tech-item hero__tech-item--2" title="Spring Boot">
+              <img src="assets/imagens/springBoot.png" alt="Spring Boot" loading="lazy">
+            </div>
+            <div class="hero__tech-item hero__tech-item--3" title="Angular">
+              <img src="assets/imagens/angular.png" alt="Angular" loading="lazy">
+            </div>
+            <div class="hero__tech-item hero__tech-item--4" title="TypeScript">
+              <img src="assets/imagens/typeSrcip.png" alt="TypeScript" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Code Block Decorativo -->
+          <div class="hero__code-block glass">
+            <div class="hero__code-header">
+              <span class="hero__code-dot hero__code-dot--red"></span>
+              <span class="hero__code-dot hero__code-dot--yellow"></span>
+              <span class="hero__code-dot hero__code-dot--green"></span>
+            </div>
+            <pre class="hero__code-content"><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = &#123;
+  <span class="code-property">name</span>: <span class="code-string">"Luiz Carlos"</span>,
+  <span class="code-property">skills</span>: [<span class="code-string">"Java"</span>, <span class="code-string">"Angular"</span>],
+  <span class="code-property">passion</span>: <span class="code-string">"Clean Code"</span>
+&#125;;</code></pre>
+          </div>
+
+          <!-- Easter Egg - Snake Game -->
+          <button 
+            class="hero__easter-egg" 
+            (click)="openSnakeGame()"
+            title="Jogar Snake 🐍"
+            aria-label="Abrir jogo Snake">
+            <i class="fa fa-gamepad"></i>
+          </button>
         </div>
       </div>
     </div>
 
-    <section class="main">
-      <div class="info">
-        <h2>Quem sou eu? Meu nome é <br> Luiz Carlos <br> Sou programador e <br> desenvolvedor Back-End </h2>
-        <div class="social-links">
-          <a href="https://www.hackerrank.com/profile/luixcarlos00" target="_blank">
-            <i class="fa-solid fa-laptop-code fa-4x social-links_I" style="color: #FFD43B;"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/luixcarlos00" target="_blank">
-            <i class="fa-brands fa-linkedin fa-4x social-links_I" style="color: #3390d7;"></i>
-          </a>
-          <a href="https://github.com/luixcarlos00" target="_blank">
-            <i class="fa-brands fa-github fa-4x social-links_I" style="color: #6e5494;"></i>
-          </a>
-        </div>
-        <div style="  width: 80%;">
-          <button (click)="download()"> Currículo</button>
+    <!-- Scroll Indicator -->
+    <div class="hero__scroll">
+      <span class="hero__scroll-text">Scroll para explorar</span>
+      <div class="hero__scroll-indicator">
+        <div class="hero__scroll-dot"></div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Seções do Portfólio -->
+  <section id="experiencias" class="section section--alt">
+    <app-Experiencias></app-Experiencias>
+  </section>
+
+  <section id="projetos" class="section">
+    <app-Projetos></app-Projetos>
+  </section>
+
+  <section id="certificados" class="section section--alt">
+    <app-certificados></app-certificados>
+  </section>
+
+  <section id="sobre" class="section">
+    <app-sobre></app-sobre>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <span class="footer__logo">LC</span>
+          <p class="footer__tagline">Transformando ideias em código</p>
+        </div>
+        
+        <div class="footer__links">
+          <a href="https://github.com/luixcarlos00" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/luixcarlos00" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:luixcarlos00@gmail.com" aria-label="Email">
+            <i class="material-icons">email</i>
+          </a>
         </div>
       </div>
-      <div class="play">
-        <button (click)="iniciarJogo()"> <i class="fa fa-play"></i></button>
+      
+      <div class="footer__bottom">
+        <p>&copy; {{ currentYear }} Luiz Carlos. Todos os direitos reservados.</p>
       </div>
-    </section>
-    <section id="Experiencias" class="section_container" style="background-color: rgb(45, 47, 51);">
-      <app-Experiencias></app-Experiencias>
-    </section>
-    <section id="Projetos" class="section_container" style="background-color: #423e46;">
-      <app-Projetos></app-Projetos>
-    </section>
-    <section id="Certificados" class="section_container" style="background-color: #39343d;">
-      <app-certificados></app-certificados>
-    </section>
-    <section id="Sobre" class="section_container" style="background-color: rgb(45, 47, 51)">
-      <app-sobre></app-sobre>
-    </section>
-  </div>
-</body>
+    </div>
+  </footer>
+</main>

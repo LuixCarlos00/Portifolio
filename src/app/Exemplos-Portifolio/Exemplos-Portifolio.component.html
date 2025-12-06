@@ -1,6 +1,6 @@
 <body>
   <br>
-  <div class="dialog-container">
+  <div class="dialog-container" *ngIf="selectedItem">
     <div class="text-section">
       <h2>{{ selectedItem.title }}</h2>
       <div [innerHTML]="sanitize(selectedItem.description)"></div>
@@ -8,7 +8,7 @@
     <div class="image-section">
       <div class="image-grid">
         <img *ngFor="let image of selectedItem.imageUrl" [src]="image.url" (click)="openMedia(image.url, false)"
-          alt="Image">
+          alt="Project image">
         <video *ngFor="let video of selectedItem.videoUrl" [src]="video.url" (click)="openMedia(video.url, true)"
           controls></video>
       </div>

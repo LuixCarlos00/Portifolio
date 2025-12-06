@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Esperiencia } from '../Opcoes/Info';
+import { Experiencia } from '../Opcoes/Info';
 
 @Component({
   selector: 'app-Experiencias',
@@ -7,10 +7,9 @@ import { Esperiencia } from '../Opcoes/Info';
   styleUrls: ['./Experiencias.component.css']
 })
 export class ExperienciasComponent implements OnInit {
-  Esperiencia = Esperiencia;
-  constructor() { }
+  readonly experiencia = Experiencia;
 
-  ngOnInit() {
-  }
+  constructor() {}
 
+  ngOnInit(): void {}
 }
