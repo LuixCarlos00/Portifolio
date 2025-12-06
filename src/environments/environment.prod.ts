@@ -1,8 +1,8 @@
 export const environment = {
   production: true,
   emailjs: {
-    publicKey: 'YOUR_EMAILJS_PUBLIC_KEY',
-    serviceId: 'YOUR_EMAILJS_SERVICE_ID',
-    templateId: 'YOUR_EMAILJS_TEMPLATE_ID'
+    publicKey: 'Ohii6Rgm12xly6gxv',
+    serviceId: 'service_yah7w5u',
+    templateId: 'template_wb5vqkm'
   }
 };

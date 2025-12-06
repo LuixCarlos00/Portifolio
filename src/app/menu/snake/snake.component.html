@@ -1,26 +1,94 @@
-<body>
-  <br>
-  <div class="game-container" #gameBoard>
-    <div class="snake" *ngFor="let segment of snake" [ngStyle]="{'top': segment.y + 'px', 'left': segment.x + 'px'}"></div>
-    <div class="food" [ngStyle]="{'top': food.y + 'px', 'left': food.x + 'px'}"></div>
-  </div>
-
-
-
-  <div class="play">
-    <button (click)="startGame()">Iniciar Jogo</button>
-  </div>
-   Score: {{ score }}
-  <div class="controls">
-
-
-    <div class="control-button-row">
-      <button class="control-button" (click)="handleDirectionClick('ArrowUp')">⬆️</button>
-      <button class="control-button" (click)="handleDirectionClick('ArrowDown')">⬇️</button>
+<div class="snake-game">
+  <div class="snake-game__header">
+    <div class="snake-game__title">
+      <i class="fa fa-gamepad"></i>
+      <span>Snake Game</span>
     </div>
-
-    <button class="control-button" (click)="handleDirectionClick('ArrowLeft')">⬅️</button>
-    <button class="control-button" (click)="handleDirectionClick('ArrowRight')">➡️</button>
-
+    <div class="snake-game__scores">
+      <div class="snake-game__score">
+        <span class="snake-game__score-label">Score</span>
+        <span class="snake-game__score-value">{{ score }}</span>
+      </div>
+      <div class="snake-game__score snake-game__score--high">
+        <span class="snake-game__score-label">Recorde</span>
+        <span class="snake-game__score-value">{{ highScore }}</span>
+      </div>
+    </div>
   </div>
-</body>
+
+  <div class="snake-game__board" #gameBoard>
+    <div 
+      class="snake-game__segment" 
+      *ngFor="let segment of snake; let i = index"
+      [class.snake-game__segment--head]="i === 0"
+      [ngStyle]="{'top': segment.y + 'px', 'left': segment.x + 'px'}">
+    </div>
+    <div 
+      class="snake-game__food" 
+      [ngStyle]="{'top': food.y + 'px', 'left': food.x + 'px'}">
+    </div>
+    
+    <div class="snake-game__overlay" *ngIf="!isPlaying">
+      <div class="snake-game__overlay-content">
+        <i class="fa fa-play-circle"></i>
+        <p>Pressione para jogar</p>
+        <span class="snake-game__hint">Use WASD ou ← ↑ ↓ →</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="snake-game__actions">
+    <button 
+      class="snake-game__btn snake-game__btn--primary" 
+      (click)="startGame()"
+      [disabled]="isPlaying">
+      <i class="fa" [class.fa-play]="!isPlaying" [class.fa-refresh]="isPlaying"></i>
+      {{ isPlaying ? 'Jogando...' : 'Iniciar' }}
+    </button>
+    <button 
+      class="snake-game__btn snake-game__btn--secondary" 
+      (click)="pauseGame()"
+      *ngIf="isPlaying">
+      <i class="fa fa-pause"></i>
+      Pausar
+    </button>
+  </div>
+
+  <div class="snake-game__controls">
+    <div class="snake-game__controls-row">
+      <button 
+        class="snake-game__control" 
+        (click)="handleDirectionClick('ArrowUp')"
+        title="W ou ↑">
+        <i class="fa fa-chevron-up"></i>
+      </button>
+    </div>
+    <div class="snake-game__controls-row">
+      <button 
+        class="snake-game__control" 
+        (click)="handleDirectionClick('ArrowLeft')"
+        title="A ou ←">
+        <i class="fa fa-chevron-left"></i>
+      </button>
+      <button 
+        class="snake-game__control" 
+        (click)="handleDirectionClick('ArrowDown')"
+        title="S ou ↓">
+        <i class="fa fa-chevron-down"></i>
+      </button>
+      <button 
+        class="snake-game__control" 
+        (click)="handleDirectionClick('ArrowRight')"
+        title="D ou →">
+        <i class="fa fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="snake-game__footer">
+    <span class="snake-game__keys">
+      <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> ou 
+      <kbd>←</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd>
+    </span>
+  </div>
+</div>
