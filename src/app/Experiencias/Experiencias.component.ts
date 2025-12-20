@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Experiencia } from '../Opcoes/Info';
+import { Experiencias } from '../Opcoes/Info';
+import { ExperienceItem } from '../core/models';
 
 @Component({
   selector: 'app-Experiencias',
@@ -7,7 +8,7 @@ import { Experiencia } from '../Opcoes/Info';
   styleUrls: ['./Experiencias.component.css']
 })
 export class ExperienciasComponent implements OnInit {
-  readonly experiencia = Experiencia;
+  readonly experiencias: ExperienceItem[] = Experiencias;
 
   constructor() {}
 

@@ -32,6 +32,14 @@ export interface ContentSection {
   description: string;
 }
 
+export interface ExperienceItem {
+  role: string;
+  company: string;
+  period: string;
+  description: string;
+  skills: string[];
+}
+
 export interface EmailFormData {
   from_name: string;
   to_email: string;

@@ -1,8 +1,25 @@
-import { CarouselImage, ContentSection } from '../core/models';
+import { faUmbrella } from '@fortawesome/free-solid-svg-icons';
+import { CarouselImage, ContentSection, ExperienceItem } from '../core/models';
+
+export const Experiencias: ExperienceItem[] = [
+  {
+    role: 'Desenvolvedor de Software',
+    company: 'Softplan',
+    period: 'Mar 2025 - Presente',
+    description: `Atuo como desenvolvedor em uma equipe multidisciplinar na Softplan, contribuindo diariamente para o desenvolvimento de novas funcionalidades do SaaS Projuris. Trabalho com tecnologias modernas e metodologias ágeis, incluindo Java 17/21, Spring Boot, Docker, RabbitMQ e Webhooks para integrações. Utilizo práticas de CI/CD com GitHub, bancos de dados MongoDB e PostgreSQL (PgAdmin), seguindo metodologia Scrum. A colaboração constante com times multidisciplinares e o foco em boas práticas de desenvolvimento garantem a entrega de soluções robustas e escaláveis.`,
+    skills: ['Java 17/21', 'Spring Boot', 'Docker', 'RabbitMQ', 'CI/CD', 'MongoDB', 'PostgreSQL', 'Scrum']
+  },
+  {
+    role: 'Desenvolvedor de Sistemas',
+    company: 'UNIFOR-MG',
+    period: 'Mar 2023 - Mar 2025',
+    description: `Durante minha experiência na Unifor MG, desenvolvi sistemas internos para auxiliar professores e funcionários da universidade. Refazer e modernizar esses sistemas me permitiu contribuir significativamente para o desenvolvimento web, otimizando a gestão de informações e processos, o que facilitou as atividades diárias e melhorou a eficiência operacional. Trabalhando de perto com os usuários finais, assegurei que as soluções fossem práticas e intuitivas. As interfaces interativas e responsivas, junto com serviços robustos e seguros, garantiram uma experiência de uso eficiente e a integridade dos dados.`,
+    skills: ['Java', 'Spring Boot', 'Angular', 'TypeScript', 'SQL Server']
+  }
+];
 
 export const Experiencia: ContentSection = {
   description: `Durante minha experiência na Unifor MG, desenvolvi sistemas internos para auxiliar professores e funcionários da universidade. Refazer e modernizar esses sistemas me permitiu contribuir significativamente para o desenvolvimento web, otimizando a gestão de informações e processos, o que facilitou as atividades diárias e melhorou a eficiência operacional.
-
 Trabalhando de perto com os usuários finais, assegurei que as soluções fossem práticas e intuitivas. As interfaces interativas e responsivas, junto com serviços robustos e seguros, garantiram uma experiência de uso eficiente e a integridade dos dados. Essa experiência permitiu-me contribuir significativamente para o ambiente educacional da Unifor MG, transformando processos internos através da tecnologia.`
 };
 

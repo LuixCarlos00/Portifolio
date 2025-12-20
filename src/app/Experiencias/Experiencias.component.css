@@ -45,6 +45,10 @@
   margin-top: var(--space-2);
 }
 
+.experience__line--hidden {
+  visibility: hidden;
+}
+
 /* Experience Content */
 .experience__content {
   flex: 1;
