@@ -10,6 +10,7 @@
         <li><a href="#experiencias" class="header__nav-link">Experiências</a></li>
         <li><a href="#projetos" class="header__nav-link">Projetos</a></li>
         <li><a href="#certificados" class="header__nav-link">Certificados</a></li>
+        <li><a href="#diplomas" class="header__nav-link">Diplomas</a></li>
         <li><a href="#sobre" class="header__nav-link">Sobre</a></li>
       </ul>
     </nav>
@@ -41,6 +42,7 @@
       <a href="#experiencias" class="header__mobile-link" (click)="closeMobileMenu()">Experiências</a>
       <a href="#projetos" class="header__mobile-link" (click)="closeMobileMenu()">Projetos</a>
       <a href="#certificados" class="header__mobile-link" (click)="closeMobileMenu()">Certificados</a>
+      <a href="#diplomas" class="header__mobile-link" (click)="closeMobileMenu()">Diplomas</a>
       <a href="#sobre" class="header__mobile-link" (click)="closeMobileMenu()">Sobre</a>
       <button class="btn btn-primary header__mobile-cta" (click)="openContactForm(); closeMobileMenu()">
         Entrar em Contato
@@ -178,7 +180,11 @@
     <app-certificados></app-certificados>
   </section>
 
-  <section id="sobre" class="section">
+  <section id="diplomas" class="section">
+    <app-diplomas></app-diplomas>
+  </section>
+
+  <section id="sobre" class="section section--alt">
     <app-sobre></app-sobre>
   </section>
 

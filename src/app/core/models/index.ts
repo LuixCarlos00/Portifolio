@@ -50,3 +50,11 @@ export interface Position {
   x: number;
   y: number;
 }
+
+export interface Diploma {
+  codigo: number;
+  titulo: string;
+  instituicao: string;
+  tipo: string;
+  imagemUrl: string;
+}

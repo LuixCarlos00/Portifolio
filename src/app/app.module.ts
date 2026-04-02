@@ -19,6 +19,7 @@ import { SobreComponent } from './sobre/sobre.component';
 import { CertificadosComponent } from './certificados/certificados.component';
 import { ProjetosComponent } from './Projetos/Projetos.component';
 import { ExperienciasComponent } from './Experiencias/Experiencias.component';
+import { DiplomasComponent } from './diplomas/diplomas.component';
 
 @NgModule({
   declarations: [				
@@ -32,7 +33,8 @@ import { ExperienciasComponent } from './Experiencias/Experiencias.component';
       SobreComponent,
       CertificadosComponent,
       ProjetosComponent,
-      ExperienciasComponent
+      ExperienciasComponent,
+      DiplomasComponent
    ],
   imports: [
     BrowserModule,

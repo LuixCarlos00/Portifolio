@@ -1,17 +1,49 @@
-<body>
-  <br>
-  <div class="dialog-container" *ngIf="selectedItem">
-    <div class="text-section">
-      <h2>{{ selectedItem.title }}</h2>
-      <div [innerHTML]="sanitize(selectedItem.description)"></div>
+<div class="modal-wrapper" *ngIf="selectedItem">
+
+  <div class="modal-header">
+    <h2 class="modal-title">{{ selectedItem.title }}</h2>
+    <div class="modal-title-line"></div>
+  </div>
+
+  <div class="modal-body">
+    <div class="modal-text">
+      <div class="modal-description" [innerHTML]="sanitize(selectedItem.description)"></div>
     </div>
-    <div class="image-section">
-      <div class="image-grid">
-        <img *ngFor="let image of selectedItem.imageUrl" [src]="image.url" (click)="openMedia(image.url, false)"
-          alt="Project image">
-        <video *ngFor="let video of selectedItem.videoUrl" [src]="video.url" (click)="openMedia(video.url, true)"
-          controls></video>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-media" *ngIf="selectedItem.imageUrl.length > 0 || selectedItem.videoUrl.length > 0">
+      <p class="modal-media__label">
+        <i class="material-icons">perm_media</i>
+        Imagens e Vídeos
+      </p>
+      <div class="modal-media__grid">
+        <div
+          class="modal-media__item"
+          *ngFor="let image of selectedItem.imageUrl"
+          (click)="openMedia(image.url, false)"
+          role="button"
+          tabindex="0"
+          aria-label="Ampliar imagem">
+          <img [src]="image.url" alt="Imagem do projeto" loading="lazy">
+          <div class="modal-media__overlay">
+            <i class="material-icons">zoom_in</i>
+          </div>
+        </div>
+
+        <div
+          class="modal-media__item modal-media__item--video"
+          *ngFor="let video of selectedItem.videoUrl"
+          role="button"
+          tabindex="0"
+          aria-label="Reproduzir vídeo">
+          <video [src]="video.url" (click)="openMedia(video.url, true)" preload="metadata"></video>
+          <div class="modal-media__overlay modal-media__overlay--video" (click)="openMedia(video.url, true)">
+            <i class="material-icons">play_circle_filled</i>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</body>
+
+</div>

@@ -10,7 +10,7 @@ import { EnviarEmailComponent } from '../enviar-email/enviar-email.component';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  private static readonly CV_PATH = 'assets/imagens/Luiz_Carlos-Cv.pdf';
+  private static readonly CV_PATH = 'assets/imagens/luiz-carlos-cv.pdf';
   private static readonly CV_FILENAME = 'luiz-carlos-cv.pdf';
   private static readonly SCROLL_THRESHOLD = 50;
 

@@ -34,11 +34,18 @@
                 Ver Detalhes
               </span>
             </div>
+            <span class="project-card__number">{{ item.codigo | number:'2.0' }}</span>
           </div>
 
           <div class="project-card__content">
             <h3 class="project-card__title">{{ item.title }}</h3>
             <div class="project-card__description" [innerHTML]="sanitize(item.description)"></div>
+            <div class="project-card__footer">
+              <span class="project-card__cta">
+                <i class="material-icons">open_in_new</i>
+                Ver projeto
+              </span>
+            </div>
           </div>
         </article>
       </div>

@@ -4,36 +4,25 @@ export const Portifolio: PortfolioItem[] = [
   {
     codigo: 1,
     title: 'Software de Gestão de Automóveis',
-    description: `Software desenvolvido para auxiliar a gestão de veículos permite o monitoramento em tempo
-      real dos veículos, controle de manutenção, e geração de relatórios detalhados sobre a utilização
-      dos automóveis. A interface foi construída utilizando Java Swing e o MySQL.`,
+    description: `Aplicação desktop para controle completo de frota de veículos. Monitoramento em tempo real, controle de manutenção, gestão de funcionários e geração de relatórios. Desenvolvido com Java Swing e MySQL.`,
     imageUrl: 'assets/imagens/softwareGestaoVeiculos/login.png',
   },
   {
     codigo: 2,
-    title: 'Plataforma de Gerenciamento para Clínica Médica - SaudeConecta',
-    description: `A plataforma de e-commerce voltada para a gestão de clínicas médicas,
-      abrangendo desde o controle de agendamentos de consultas até a gestão financeira. A plataforma
-      foi projetada para facilitar o processo de tomada de decisões, oferecendo relatórios analíticos e
-      dashboards personalizados.`,
-    imageUrl: 'assets/imagens/SoftwareDeClinica/logo.png',
+    title: 'SaúdeConecta — Gestão para Clínicas Médicas',
+    description: `Plataforma web completa para administração de clínicas médicas. Agendamentos, prontuário eletrônico, painel financeiro e dashboards por perfil de acesso. Responsivo para desktop e mobile.`,
+    imageUrl: 'assets/imagens/SoftwareDeClinica/Captura de tela de 2026-04-02 16-28-25.png',
   },
   {
     codigo: 3,
-    title: 'IA - Chat Boot - gemini',
-    description: `Este projeto é um chatbot desenvolvido utilizando Python, VSCode e algumas bibliotecas
-     específicas para reconhecimento de fala, síntese de voz e integração com o Google Generative AI.`,
+    title: 'Assistente de IA com Voz — Gemini Chatbot',
+    description: `Chatbot inteligente em Python com reconhecimento de voz, síntese de fala e integração com o modelo Gemini da Google. Respostas contextuais em linguagem natural com personalidade configurável.`,
     imageUrl: 'assets/imagens/chatBoot/chatBot5.png',
   },
   {
     codigo: 4,
-    title: 'Projeto de Download e Transcrição de Vídeos e Áudios do YouTube',
-    description: `Este projeto é uma aplicação GUI desenvolvida em Python que permite baixar vídeos e áudios
-     do YouTube e realizar a transcrição de áudios em texto. A aplicação utiliza diversas bibliotecas como
-     pytube, tkinter, whisper, speech_recognition, e pydub para oferecer uma interface amigável e funcionalidades robustas
-     .Abaixo estão os principais componentes e funcionalidades do projeto.
-      .
-     `,
+    title: 'Downloader e Transcritor de Vídeos do YouTube',
+    description: `Aplicação desktop com GUI em Python para download de vídeos e áudios do YouTube e transcrição automática de áudio para texto. Suporte a múltiplos downloads, modo escuro e organização automática de arquivos.`,
     imageUrl: 'assets/imagens/Analizador-De-Video-Youtube/analizadorVideo.png',
   },
 ];

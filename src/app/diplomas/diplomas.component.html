@@ -1,0 +1,40 @@
+<section id="diplomas" class="section_container">
+  <div class="diplomas">
+    <div class="container">
+      <div class="diplomas__header">
+        <h2 class="section-title">Diplomas</h2>
+        <p class="section-subtitle">
+          Formações acadêmicas que fundamentam minha trajetória profissional.
+        </p>
+      </div>
+
+      <div class="diplomas__grid">
+        <article
+          class="diploma-card card"
+          *ngFor="let diploma of diplomas; let i = index"
+          (click)="abrirDiploma(diploma)"
+          [style.animation-delay]="(i * 0.15) + 's'"
+          tabindex="0"
+          role="button"
+          [attr.aria-label]="'Ver diploma: ' + diploma.titulo">
+
+          <div class="diploma-card__image">
+            <img [src]="diploma.imagemUrl" [alt]="diploma.titulo" loading="lazy">
+            <div class="diploma-card__overlay">
+              <i class="material-icons">zoom_in</i>
+            </div>
+          </div>
+
+          <div class="diploma-card__body">
+            <span class="diploma-card__tipo tag">{{ diploma.tipo }}</span>
+            <h3 class="diploma-card__titulo">{{ diploma.titulo }}</h3>
+            <p class="diploma-card__instituicao">
+              <i class="material-icons diploma-card__icon">school</i>
+              {{ diploma.instituicao }}
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
