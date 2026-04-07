@@ -72,35 +72,55 @@ export const ExemplosPortifolio: PortfolioExample[] = [
     description: `
       <h2 class="desc-title">SaúdeConecta — Plataforma de Gestão para Clínicas Médicas</h2>
       <p>
-        Sistema web completo voltado para a administração de clínicas médicas, cobrindo desde o
-        agendamento de consultas e gestão de prontuários até o controle financeiro e relatórios gerenciais.
-      </p>
-
-      <h3 class="desc-subtitle">Sobre o Projeto</h3>
-      <p>
-        Desenvolvida com uma arquitetura moderna, a plataforma foi projetada para ser responsiva e
-        acessível em dispositivos móveis e desktop. O foco principal é simplificar a rotina operacional
-        das clínicas, reduzindo retrabalho e centralizando informações em um único ambiente.
+        Sistema web fullstack para administração de clínicas médicas, composto por uma API REST robusta
+        em Spring Boot e uma SPA em Angular 17. Cobre desde o agendamento de consultas e prontuário
+        eletrônico até geração de documentos PDF, notificações por e-mail/SMS e controle de acesso por perfil.
       </p>
 
       <h3 class="desc-subtitle">Funcionalidades</h3>
       <ul>
-        <li>Agendamento e gerenciamento de consultas médicas</li>
-        <li>Histórico completo de prontuário eletrônico por paciente</li>
-        <li>Painel financeiro com receitas, despesas e relatórios analíticos</li>
-        <li>Dashboard personalizado por perfil de acesso (médico, recepcionista, admin)</li>
+        <li>Agendamento e gerenciamento completo de consultas médicas (CRUD)</li>
+        <li>Prontuário eletrônico com histórico médico por paciente</li>
+        <li>Geração de PDFs: receitas, atestados e solicitações de exames</li>
+        <li>Dashboard com métricas e gráficos de acompanhamento (Chart.js)</li>
+        <li>Cadastro de médicos com especialidades e secretárias</li>
+        <li>Notificações por e-mail e SMS via Twilio</li>
+        <li>Autenticação JWT com verificação 2FA por código de e-mail</li>
+        <li>Controle de acesso por perfil: Admin, Médico e Secretária</li>
         <li>Troca de senha e gerenciamento de usuários</li>
-        <li>Interface responsiva para uso em dispositivos móveis</li>
-        <li>Controle de permissões por função na clínica</li>
+        <li>Interface responsiva para desktop e mobile</li>
+      </ul>
+
+      <h3 class="desc-subtitle">Backend</h3>
+      <ul>
+        <li>API REST com módulos independentes: consultas, médicos, pacientes, prontuários, secretárias, endereços e verificação 2FA</li>
+        <li>Autenticação e autorização com Spring Security + JWT</li>
+        <li>Envio de e-mail e SMS (Twilio) como serviços desacoplados</li>
+        <li>Tratamento centralizado de exceções e configurações de segurança</li>
+      </ul>
+
+      <h3 class="desc-subtitle">Frontend</h3>
+      <ul>
+        <li>SPA em Angular 17 com Angular Material como biblioteca de componentes</li>
+        <li>Guards de rota por role (AuthGuard, GuestGuard, RoleGuard)</li>
+        <li>Interceptors de autenticação e tratamento de erros HTTP</li>
+        <li>Rich text com ngx-quill para prontuários e receitas médicas</li>
+        <li>Alertas com SweetAlert2 e manipulação de datas com date-fns</li>
       </ul>
 
       <h3 class="desc-subtitle">Tecnologias</h3>
       <div class="desc-tech">
-        <span>Angular</span>
+        <span>Angular 17</span>
         <span>TypeScript</span>
+        <span>Angular Material</span>
         <span>Spring Boot</span>
-        <span>Java</span>
-        <span>MySQL</span>
+        <span>Java 17</span>
+        <span>Spring Security</span>
+        <span>JWT</span>
+        <span>MySQL 8</span>
+        <span>Twilio</span>
+        <span>Chart.js</span>
+        <span>html2pdf.js</span>
         <span>REST API</span>
       </div>
     `,
@@ -110,7 +130,10 @@ export const ExemplosPortifolio: PortfolioExample[] = [
       { url: 'assets/imagens/SoftwareDeClinica/angenda.png' },
       { url: 'assets/imagens/SoftwareDeClinica/genereConsulta.png' },
     ],
-    videoUrl: [],
+    videoUrl: [
+      { url: 'assets/imagens/SoftwareDeClinica/homepage.mp4' },
+      { url: 'assets/imagens/SoftwareDeClinica/loadpage.mp4' },
+    ],
   },
 
   {
